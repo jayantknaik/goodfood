@@ -5,14 +5,24 @@ const Header = () => {
     const [btnName, setBtnName] = useState('Login');
 
     const changeBtnName = (event) => {
-        setBtnName('Logout');
-        event.target.classList.add('logout');
+        if(btnName === 'Logout') {
+            setBtnName('Login');
+            event.target.classList.remove('logout');
+        }
+        else {
+            setBtnName('Logout');
+            event.target.classList.add('logout');
+        }
     }
 
     return (
         <header className="header">
             <div className="header-wrapper">
                 <div className="logo">goodfood</div>
+                <div className="search-wrapper">
+                    <input type="text" id="search" className="search" />
+                    <button className="search-button"></button>
+                </div>
                 <nav className="nav">
                     <a href="" className="nav-item">Home</a>
                     <a href="" className="nav-item">About Us</a>
