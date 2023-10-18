@@ -3,7 +3,6 @@ import { IMG_URL } from "../utils/constants";
 const RestaurantCard = ({resData}) => {
 
     const {name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla} = resData.info;
-    console.log(resData.info);
 
     return (
         <a href="" className="res-card">

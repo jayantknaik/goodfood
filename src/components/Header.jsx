@@ -1,17 +1,17 @@
-import { useState } from "react";
-
-const Header = () => {
+import { useEffect, useState } from "react";
+import Search from "./Search";
+const Header = ({resListCopy, resList, setResListCopy}) => {
 
     const [btnName, setBtnName] = useState('Login');
 
-    const changeBtnName = (event) => {
+    const changeBtnName = (e) => {
         if(btnName === 'Logout') {
             setBtnName('Login');
-            event.target.classList.remove('logout');
+            e.target.classList.remove('logout');
         }
         else {
             setBtnName('Logout');
-            event.target.classList.add('logout');
+            e.target.classList.add('logout');
         }
     }
 
@@ -19,10 +19,7 @@ const Header = () => {
         <header className="header">
             <div className="header-wrapper">
                 <div className="logo">goodfood</div>
-                <div className="search-wrapper">
-                    <input type="text" id="search" className="search" />
-                    <button className="search-button"></button>
-                </div>
+                <Search resListCopy={resListCopy} resList={resList} setResListCopy={setResListCopy} />
                 <nav className="nav">
                     <a href="" className="nav-item">Home</a>
                     <a href="" className="nav-item">About Us</a>
