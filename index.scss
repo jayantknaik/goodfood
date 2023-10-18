@@ -23,12 +23,14 @@ body {
     align-items: center;
     justify-content: space-between;
     border-radius: 50px;
+    background-color: #fff;
     box-shadow: 0 4px 2.5rem rgba(0,0,0,.08);
     padding: 16px 48px;
     left: 50%;
-    top: 2%;
+    top: 4%;
     translate: -50% 0;
     margin: auto;
+    z-index: 99;
     &-wrapper {
         width: 100%;
         display: flex;
@@ -46,12 +48,36 @@ body {
 
 .nav {
     display: flex;
+    align-items: center;
     gap: 36px;
     &-item {
         font-size: 16px;
         line-height: 22px;
-        color: #111;
+        font-weight: 500;
+        color: #303030;
         text-decoration: none;
+        transition: 0.3s all ease;
+        &:hover {
+            color: #c1121f;
+        }
+    }
+    &-button {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+        color: #303030;
+        border: none;
+        border: 1px solid #f3f3f3;
+        background-color: #f3f3f3;
+        border-radius: 50px;
+        padding: 6px 20px;
+        cursor: pointer;
+        transition: 0.3s all ease;
+        &:hover {
+            color: #fff;
+            background-color: #c1121f;
+            border: 1px solid #c1121f;
+        }
     }
 }
 
@@ -70,9 +96,100 @@ body {
     &-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-flow: column;
+        gap: 32px;
+        padding: 32px 0 0;
     }
     &-card {
+        border-radius: 8px;
+        overflow: hidden;
+        transition: 0.3s all ease;
+        text-decoration: none;
+        cursor: pointer;
+        &__img {
+            display: block;
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+        &__info {
+            border: 1px solid #f3f3f3;
+            border-top: 0;
+            border-radius: 0 0 8px 8px;
+            padding: 8px;
+        }
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__name {
+            max-width: 70%;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 700;
+            color: #303030;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__rating {
+            position: relative;
+            font-size: 10px;
+            line-height: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: rgb(38, 126, 62);
+            padding: 0 2px 0 6px;
+            border-radius: 4px;
+            &::after {
+                content: '⭐';
+                display: inline-block;
+                font-size: 10px;
+                vertical-align: -1px;
+                margin-left: 4px;
+            }
+        }
+        &__cuisine {
+            max-width: 150px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #303030;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__price {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #303030;
+        }
+        &__eta {
+            font-size: 12px;
+            line-height: 18px;
+            color: #303030;
+            font-weight: 600;
+            text-align: right;
+        }
+        &:hover {
+            box-shadow: 0 10px 30px rgba(206, 209, 224,.25);
+        }
+    }
+}
 
+.shimmer {
+    &-container {
+        max-width: 1140px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        margin: 150px auto 0;
+    }
+    &-card {
+        width: 261px;
+        height: 217px;
+        background-color: #f3f3f3;
+        border-radius: 8px;
     }
 }
