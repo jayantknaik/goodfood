@@ -1,10 +1,14 @@
+import { useOutletContext } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 
-const Body = ({resListCopy}) => {
+const Body = () => {
+
+    const resListCopy = useOutletContext();
+    console.log(resListCopy);
 
     return resListCopy.length === 0 ? <Shimmer/> : (
-        <main className="body">
+        <main className="main">
             <div className="res-container">
                 {
                     resListCopy.map((res, index) => {
