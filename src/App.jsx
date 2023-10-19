@@ -22,7 +22,7 @@ const AppLayout = () => {
     const fetchData = async () => {
         const data = await fetch(SWIGGY_API);
         const json = await data.json();
-        const resArray = json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const resArray = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setResList(resArray);
         setResListCopy(resArray);
     }

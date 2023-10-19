@@ -265,6 +265,7 @@ body {
         }
         &:hover {
             box-shadow: 0 10px 30px rgba(206, 209, 224,.25);
+            scale: 0.95 0.95;
         }
     }
 }
@@ -275,7 +276,7 @@ body {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 32px;
-        margin: 120px auto 0;
+        margin: 120px auto 16px;
     }
     &-card {
         position: relative;
