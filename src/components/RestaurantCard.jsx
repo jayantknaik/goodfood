@@ -3,6 +3,7 @@ import { IMG_URL } from "../utils/constants";
 const RestaurantCard = ({resData}) => {
 
     const {name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla} = resData.info;
+    console.log(resData);
 
     return (
         <a href="" className="res-card">
@@ -13,7 +14,7 @@ const RestaurantCard = ({resData}) => {
                     <div className="res-card__rating">{avgRating}</div>
                 </div>
                 <div className="res-card__row">
-                    <div className="res-card__cuisine">{cuisines}</div>
+                    <div className="res-card__cuisine">{cuisines.join(", ")}</div>
                     <div className="res-card__price">{costForTwo}</div>
                 </div>
                 <div className="res-card__eta">{sla.deliveryTime} min</div>

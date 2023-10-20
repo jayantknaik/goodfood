@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { SWIGGY_API } from "./utils/constants";
+import { RESTAURANTS_URL } from "./utils/constants";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Body from './components/Body';
@@ -20,7 +20,7 @@ const AppLayout = () => {
     }, []);
     
     const fetchData = async () => {
-        const data = await fetch(SWIGGY_API);
+        const data = await fetch(RESTAURANTS_URL);
         const json = await data.json();
         const resArray = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         setResList(resArray);

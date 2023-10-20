@@ -1,0 +1,91 @@
+.main {
+    max-width: 1140px;
+    margin: 120px auto 0;
+}
+
+.res {
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        padding: 0 0 16px;
+    }
+    &-card {
+        border-radius: 8px;
+        overflow: hidden;
+        transition: 0.3s all ease;
+        text-decoration: none;
+        cursor: pointer;
+        &__img {
+            display: block;
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+        &__info {
+            border: 1px solid #f3f3f3;
+            border-top: 0;
+            border-radius: 0 0 8px 8px;
+            padding: 8px;
+        }
+        &__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__name {
+            max-width: 70%;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 700;
+            color: #303030;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__rating {
+            position: relative;
+            font-size: 10px;
+            line-height: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: rgb(38, 126, 62);
+            padding: 0 2px 0 6px;
+            border-radius: 4px;
+            &::after {
+                content: '⭐';
+                display: inline-block;
+                font-size: 10px;
+                vertical-align: -1px;
+                margin-left: 4px;
+            }
+        }
+        &__cuisine {
+            max-width: 150px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #606060;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        &__price {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            color: #606060;
+        }
+        &__eta {
+            font-size: 12px;
+            line-height: 18px;
+            color: #303030;
+            font-weight: 600;
+            text-align: right;
+        }
+        &:hover {
+            box-shadow: 0 10px 30px rgba(206, 209, 224,.25);
+            scale: 0.95 0.95;
+        }
+    }
+}

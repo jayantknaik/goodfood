@@ -5,7 +5,6 @@ import Shimmer from './Shimmer';
 const Body = () => {
 
     const resListCopy = useOutletContext();
-    console.log(resListCopy);
 
     return resListCopy.length === 0 ? <Shimmer/> : (
         <main className="main">

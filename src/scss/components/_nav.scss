@@ -1,0 +1,43 @@
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    &-item {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #303030;
+        text-decoration: none;
+        transition: 0.3s all ease;
+        &:hover {
+            color: #c1121f;
+        }
+    }
+    &-button {
+        min-width: 94px;
+        font-size: 14px;
+        line-height: 40px;
+        font-weight: 600;
+        color: #fff;
+        border: none;
+        background-color: #d8232a;
+        border: 1px solid #d8232a;
+        border-radius: 50px;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: 0.3s all ease;
+        &:hover {
+            background-color: #c31f25;
+            border: 1px solid #c31f25;
+        }
+        &.logout {
+            color: #303030;
+            border: 1px solid #f3f3f3;
+            background-color: #f3f3f3;
+            &:hover {
+                border: 1px solid #e8e8e8;
+                background-color: #e8e8e8;
+            }
+        }
+    }
+}
