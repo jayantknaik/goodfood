@@ -1,9 +1,42 @@
 .menu {
+    position: relative;
     max-width: 1140px;
     margin: 120px auto 0;
+    &__img {
+        position: absolute;
+        height: 400px;
+        right: 0;
+        top: 0;
+        border-radius: 20px;
+    }
     &__name {
-        font-size: 74px;
+        font-size: 52px;
         font-weight: 600;
-        color: #303030;      
+        color: #303030;   
+        margin-left: -4px;   
+    }
+    &__cuisines, &__area {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+        color: #606060;
+    }
+    &__rating {
+        position: relative;
+        display: inline-block;
+        font-size: 18px;
+        line-height: 16px;
+        font-weight: 600;
+        color: #fff;
+        background-color: rgb(38, 126, 62);
+        padding: 2px 2px 2px 6px;
+        border-radius: 4px;
+        &::after {
+            content: '⭐';
+            display: inline-block;
+            font-size: 14px;
+            vertical-align: -1px;
+            margin-left: 4px;
+        }
     }
 }
