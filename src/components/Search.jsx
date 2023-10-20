@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Search = ({resList, resListCopy, setResListCopy}) => {
 
@@ -21,20 +22,25 @@ const Search = ({resList, resListCopy, setResListCopy}) => {
         searchDD.classList.remove('show');
     }
 
+    const closeDD = () => {
+        searchDD.classList.remove('show');
+    }
+
     return (
         <div className="search-container">
             <input type="text" id="search" className="search" value={searchText} placeholder="Search Restaurants" autoComplete="off" onChange={(e) => {updateInput(e)}} />
             <button type="button" className="search-button" onClick={filterRes}></button>
             <div className="search__list-wrapper" id="search-dd">
-                <ul className="search__list">
+                <div className="search__list">
                     {
-                        filteredRestaurants.map((res, index) => {
+                        filteredRestaurants.map((res) => {
+                            console.log(res);
                             return (
-                                <li key={index} className="search__list-item"><div className="search__list-text">{res.info.name}</div></li>
+                                <Link to={'/restaurants/' + res.info.id} key={res.info.id} className="search__list-item" onClick={closeDD}><div className="search__list-text">{res.info.name}</div></Link>
                             )
                         })
                     }
-                </ul>
+                </div>
             </div>
         </div>
     )

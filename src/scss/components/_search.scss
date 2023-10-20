@@ -51,9 +51,11 @@
             }
         }
         &-item {
+            display: block;
             padding: 10px 10px 10px 20px;
             cursor: pointer;
             transition: 0.3s all ease;
+            text-decoration: none;
             &:hover {
                 background-color: #f3f3f3;
             }

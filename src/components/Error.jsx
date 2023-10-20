@@ -5,9 +5,9 @@ const Error = () => {
     const err = useRouteError();
 
     return (
-        <main className="main">
-            <h1>Error!!!</h1>
-            <h2>{err.data}</h2>
+        <main className="error">
+            <div className="error__head">Error!!!</div>
+            <div className="error__desc">{err.data}</div>
         </main>
     )
 }

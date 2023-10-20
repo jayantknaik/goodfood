@@ -1,12 +1,13 @@
 import { IMG_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const RestaurantCard = ({resData}) => {
 
-    const {name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla} = resData.info;
+    const {id, name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla} = resData.info;
     console.log(resData);
 
     return (
-        <a href="" className="res-card">
+        <Link to={"/restaurants/" + id} className="res-card">
             <img className="res-card__img" src={IMG_URL + cloudinaryImageId} alt="res-image" />
             <div className="res-card__info">
                 <div className="res-card__row">
@@ -19,7 +20,7 @@ const RestaurantCard = ({resData}) => {
                 </div>
                 <div className="res-card__eta">{sla.deliveryTime} min</div>
             </div>
-        </a>
+        </Link>
     )
 }
 
