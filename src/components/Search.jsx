@@ -19,6 +19,7 @@ const Search = ({resList, resListCopy, setResListCopy}) => {
 
     const filterRes = () => {
         searchBar.value.length == 0 ? setResListCopy(resList) : setResListCopy(filteredRestaurants);
+        setSearchText('');
         searchDD.classList.remove('show');
     }
 
