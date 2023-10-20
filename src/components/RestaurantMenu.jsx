@@ -21,6 +21,8 @@ const RestaurantMenu = () => {
     setDetails(json.data.cards[0].card.card.info);
     setMenu(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
   }
+
+  console.log(menu);
   
   if (resInfo.length===0) return <Shimmer />;
 
@@ -49,13 +51,13 @@ const RestaurantMenu = () => {
                 {
                   menu.map((item) => {
 
-                    const {id, name, description, imageId, price} = item.card.info;
+                    const {id, name, description, imageId, price, defaultPrice} = item.card.info;
 
                     return (
                       <li key={id} className="menu__item">
                         <div className="menu__item__info">
                           <div className="menu__item__name">{name}</div>
-                          <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price/100}</div>
+                          <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? price/100 : defaultPrice/100}</div>
                           <div className="menu__item__desc">{description}</div>
                         </div>
                         <img className="menu__item__image" src={IMG_URL + imageId} alt="food-image" />
