@@ -1,18 +1,15 @@
-import { useEffect, useState } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 
-const Header = ({resListCopy, resList, setResListCopy}) => {
-
-    const [btnName, setBtnName] = useState('Login');
+const Header = ({resListCopy, resList, setResListCopy, loginBtn, setLoginBtn}) => {
 
     const changeBtnName = (e) => {
-        if(btnName === 'Logout') {
-            setBtnName('Login');
+        if(loginBtn === 'Logout') {
+            setLoginBtn('loginBtn');
             e.target.classList.remove('logout');
         }
         else {
-            setBtnName('Logout');
+            setLoginBtn('Logout');
             e.target.classList.add('logout');
         }
     }
@@ -27,7 +24,7 @@ const Header = ({resListCopy, resList, setResListCopy}) => {
                     <Link to="/about" className="nav-item">About Us</Link>
                     <Link to="/contact" className="nav-item">Contact Us</Link>
                     <Link to="/" className="nav-item">Cart</Link>
-                    <button className="nav-button" onClick={changeBtnName}>{btnName}</button>
+                    <Link to='/login' className="nav-button" onClick={changeBtnName}>{loginBtn}</Link>
                 </nav>
             </div>
         </header>

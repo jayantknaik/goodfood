@@ -1,8 +1,8 @@
 import { useOutletContext } from 'react-router-dom';
-import RestaurantCard from './RestaurantCard';
-import Shimmer from './Shimmer';
+import RestaurantCard from '../components/RestaurantCard';
+import Shimmer from '../components/Shimmer';
 
-const Body = () => {
+const Home = () => {
 
     const resListCopy = useOutletContext();
 
@@ -23,4 +23,4 @@ const Body = () => {
     )
 }
 
-export default Body;
+export default Home;

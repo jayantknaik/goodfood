@@ -1,5 +1,5 @@
-import Footer from './Footer';
-import ProfileClass from './ProfileClass';
+import Footer from '../components/Footer';
+import ProfileClass from '../components/ProfileClass';
 
 const About = () => {
   return (

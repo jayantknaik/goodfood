@@ -22,8 +22,6 @@ const RestaurantMenu = () => {
     setDetails(json.data.cards[0].card.card.info);
     setMenu(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
   }
-
-  console.log(menu);
   
   if (resInfo.length===0) return <Shimmer />;
 

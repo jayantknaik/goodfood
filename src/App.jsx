@@ -3,18 +3,19 @@ import ReactDOM from "react-dom/client";
 import { RESTAURANTS_URL } from "./utils/constants";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import Body from './components/Body';
-import About from "./components/About";
-import Contact from "./components/Contact";
+import Home from './pages/Home';
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Footer from "./components/Footer";
+import Login from "./pages/Login";
 
 
 const AppLayout = () => {
     
     const [resList, setResList] = useState([]);
     const [resListCopy, setResListCopy] = useState([]);
+    const [loginBtn, setLoginBtn] = useState('Login');
 
     useEffect(() => {
         fetchData();
@@ -30,9 +31,8 @@ const AppLayout = () => {
 
     return (
         <div className="app">
-            <Header resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} />
+            <Header resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
             <Outlet context={resListCopy}/>
-            {/* <Footer /> */}
         </div>
     )
 }
@@ -44,7 +44,7 @@ const appRouter = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Body />,
+                element: <Home />,
             },
             {
                 path: '/about',
@@ -58,6 +58,10 @@ const appRouter = createBrowserRouter([
                 path: '/restaurants/:resId',
                 element: <RestaurantMenu />
             },
+            {
+                path: '/login',
+                element: <Login />
+            }
         ],
         errorElement: <Error />
     }, 
