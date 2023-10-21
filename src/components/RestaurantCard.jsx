@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const RestaurantCard = ({resData}) => {
 
     const {id, name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla} = resData.info;
-    console.log(resData);
 
     return (
         <Link to={"/restaurants/" + id} className="res-card">

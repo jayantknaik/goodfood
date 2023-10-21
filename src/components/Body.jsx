@@ -7,17 +7,19 @@ const Body = () => {
     const resListCopy = useOutletContext();
 
     return resListCopy.length === 0 ? <Shimmer/> : (
-        <main className="main">
-            <div className="res-container">
-                {
-                    resListCopy.map((res, index) => {
-                        return (
-                            <RestaurantCard resData={res} key={index} />
-                        )
-                    })
-                }
-            </div>
-        </main>
+        <>
+            <main className="main">
+                <div className="res-container">
+                    {
+                        resListCopy.map((res, index) => {
+                            return (
+                                <RestaurantCard resData={res} key={index} />
+                            )
+                        })
+                    }
+                </div>
+            </main>
+        </>
     )
 }
 

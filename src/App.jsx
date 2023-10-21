@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Footer from "./components/Footer";
 
 
 const AppLayout = () => {
@@ -31,6 +32,7 @@ const AppLayout = () => {
         <div className="app">
             <Header resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} />
             <Outlet context={resListCopy}/>
+            {/* <Footer /> */}
         </div>
     )
 }

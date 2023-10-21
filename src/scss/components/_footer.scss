@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    background-color: #d7d7d7;
+    color: #606060;
+    &.fixed {
+        position: absolute;
+        bottom: 0;
+    }
+}
