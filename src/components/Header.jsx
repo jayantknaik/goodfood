@@ -5,7 +5,7 @@ const Header = ({resListCopy, resList, setResListCopy, loginBtn, setLoginBtn}) =
 
     const changeBtnName = (e) => {
         if(loginBtn === 'Logout') {
-            setLoginBtn('loginBtn');
+            setLoginBtn('Login');
             e.target.classList.remove('logout');
         }
         else {

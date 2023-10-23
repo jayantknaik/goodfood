@@ -1,55 +1,44 @@
-import { IMG_URL, MENU_URL } from "../utils/constants";
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import Footer from "./Footer";
+import useFetchResInfo from '../utils/hooks/useFetchResInfo';
+import useFetchResMenu from '../utils/hooks/useFetchResMenu';
+import { useEffect } from "react";
 
 const RestaurantMenu = () => {
 
   const { resId }  = useParams();
-  const [resInfo, setResInfo] = useState([]);
-  const [details, setDetails] =useState({});
-  const [menu, setMenu] =useState({});
-
-  useEffect(() => {
-    fetchMenu();
-  }, [])
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_URL + resId)
-    const json = await data.json();
-    setResInfo(json.data.cards);
-    setDetails(json.data.cards[0].card.card.info);
-    setMenu(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
-  }
+  let resInfo = useFetchResInfo(resId);
+  let resMenu = useFetchResMenu(resId);
+  console.log(resInfo);
   
   if (resInfo.length===0) return <Shimmer />;
-
+  
   return (
     <>
-      <div className="menu">
-          <img className="menu__img" src={IMG_URL + details.cloudinaryImageId} alt="" />
+{/*       <div className="menu">
+          <img className="menu__img" src={IMG_URL + resInfo.cloudinaryImageId} alt="" />
           <div className="menu__info">
             <div className="menu__info__scroll">
               <div className="menu__info-container first">
                 <div className="menu__row">
-                  <div className="menu__name">{ details.name }</div>
+                  <div className="menu__name">{ resInfo.name }</div>
                   <div className="menu__rating-container">
-                    <div className="menu__rating">{ details.avgRating }</div>
-                    <div className="menu__rating-total">{ details.totalRatingsString }</div>
+                    <div className="menu__rating">{ resInfo.avgRating }</div>
+                    <div className="menu__rating-total">{ resInfo.totalRatingsString }</div>
                   </div>
                 </div>
-                <div className="menu__cuisines">{ details.cuisines.join(", ") }</div>
+                <div className="menu__cuisines">{ resInfo.cuisines.join(", ") }</div>
               </div>
               <div className="menu__info-container second">
-                <div className="menu__area">{ details.areaName }</div>
-                <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{ details.costForTwo / 100 } for two</div>
+                <div className="menu__area">{ resInfo.areaName }</div>
+                <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{ resInfo.costForTwo / 100 } for two</div>
               </div>
               <div className="menu__info-container third">
                 <div className="menu__head">Recommended</div>
                 <ul className="menu__list">
                   {
-                    menu.map((item) => {
+                    resMenu.map((item) => {
 
                       const {id, name, description, imageId, price, defaultPrice} = item.card.info;
 
@@ -69,7 +58,7 @@ const RestaurantMenu = () => {
               </div>
             </div>
           </div>
-      </div>
+      </div> */}
       <Footer type="fixed"/>
     </>
   )

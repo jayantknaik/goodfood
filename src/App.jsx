@@ -31,7 +31,7 @@ const AppLayout = () => {
 
     return (
         <div className="app">
-            <Header resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
+            {/* <Header resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} loginBtn={loginBtn} setLoginBtn={setLoginBtn} /> */}
             <Outlet context={resListCopy}/>
         </div>
     )
