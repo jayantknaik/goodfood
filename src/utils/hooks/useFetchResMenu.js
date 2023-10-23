@@ -14,7 +14,7 @@ const useFetchResMenu = (resId) => {
         const json = await data.json();
         setResMenu(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
     }
-
+    console.log(resMenu);
     return resMenu;
 }
 

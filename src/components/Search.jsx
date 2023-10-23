@@ -35,7 +35,6 @@ const Search = ({resList, resListCopy, setResListCopy}) => {
                 <div className="search__list">
                     {
                         filteredRestaurants.map((res) => {
-                            console.log(res);
                             return (
                                 <Link to={'/restaurants/' + res.info.id} key={res.info.id} className="search__list-item" onClick={closeDD}><div className="search__list-text">{res.info.name}</div></Link>
                             )

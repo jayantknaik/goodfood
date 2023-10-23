@@ -3,37 +3,40 @@ import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import useFetchResInfo from '../utils/hooks/useFetchResInfo';
 import useFetchResMenu from '../utils/hooks/useFetchResMenu';
-import { useEffect } from "react";
+import { IMG_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
 
-  const { resId }  = useParams();
+  let { resId }  = useParams();
   let resInfo = useFetchResInfo(resId);
   let resMenu = useFetchResMenu(resId);
-  console.log(resInfo);
+  const {name, avgRating, totalRatingsString, cuisines, areaName, costForTwo, cloudinaryImageId} = resInfo;
   
   if (resInfo.length===0) return <Shimmer />;
   
   return (
     <>
-{/*       <div className="menu">
-          <img className="menu__img" src={IMG_URL + resInfo.cloudinaryImageId} alt="" />
+      <div className="menu">
+          <img className="menu__img" src={IMG_URL + cloudinaryImageId} alt="" />
           <div className="menu__info">
             <div className="menu__info__scroll">
+
               <div className="menu__info-container first">
                 <div className="menu__row">
-                  <div className="menu__name">{ resInfo.name }</div>
+                  <div className="menu__name">{ name }</div>
                   <div className="menu__rating-container">
-                    <div className="menu__rating">{ resInfo.avgRating }</div>
-                    <div className="menu__rating-total">{ resInfo.totalRatingsString }</div>
+                    <div className="menu__rating">{ avgRating }</div>
+                    <div className="menu__rating-total">{ totalRatingsString }</div>
                   </div>
                 </div>
-                <div className="menu__cuisines">{ resInfo.cuisines.join(", ") }</div>
+                <div className="menu__cuisines">{ cuisines }</div>
               </div>
+
               <div className="menu__info-container second">
-                <div className="menu__area">{ resInfo.areaName }</div>
-                <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{ resInfo.costForTwo / 100 } for two</div>
+                <div className="menu__area">{ areaName }</div>
+                <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{ costForTwo / 100 } for two</div>
               </div>
+
               <div className="menu__info-container third">
                 <div className="menu__head">Recommended</div>
                 <ul className="menu__list">
@@ -56,9 +59,10 @@ const RestaurantMenu = () => {
                   }
                 </ul>
               </div>
+
             </div>
           </div>
-      </div> */}
+      </div>
       <Footer type="fixed"/>
     </>
   )
