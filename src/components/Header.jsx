@@ -1,7 +1,7 @@
 import Search from "./Search";
 import { Link } from "react-router-dom";
 
-const Header = ({resListCopy, resList, setResListCopy, loginBtn, setLoginBtn}) => {
+const Header = ({resList, loginBtn, setLoginBtn}) => {
 
     const changeBtnName = (e) => {
         if(loginBtn === 'Logout') {
@@ -18,7 +18,7 @@ const Header = ({resListCopy, resList, setResListCopy, loginBtn, setLoginBtn}) =
         <header className="header">
             <div className="header-wrapper">
                 <Link to='/' className="logo">goodfood</Link>
-                <Search resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} />
+                <Search resList={resList} />
                 <nav className="nav">
                     <Link to="/" className="nav-item">Home</Link>
                     <Link to="/about" className="nav-item">About Us</Link>

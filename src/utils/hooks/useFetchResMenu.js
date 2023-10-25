@@ -12,9 +12,8 @@ const useFetchResMenu = (resId) => {
     const fetchResMenu = async () => {
         const data = await fetch(MENU_URL + resId);
         const json = await data.json();
-        setResMenu(json.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards);
+        setResMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
     }
-    console.log(resMenu);
     return resMenu;
 }
 

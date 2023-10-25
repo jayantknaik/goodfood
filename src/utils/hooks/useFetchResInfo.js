@@ -12,7 +12,7 @@ const useFetchResInfo = (resId) => {
     const fetchResInfo = async () => {
         const data = await fetch(MENU_URL + resId);
         const json = await data.json();
-        setResInfo(json.data.cards[0].card.card.info);
+        setResInfo(json?.data?.cards[0]?.card?.card?.info);
     }
 
     return resInfo;

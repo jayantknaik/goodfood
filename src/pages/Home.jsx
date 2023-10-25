@@ -4,14 +4,14 @@ import Shimmer from '../components/Shimmer';
 
 const Home = () => {
 
-    const resListCopy = useOutletContext();
+    const resList = useOutletContext();
 
-    return resListCopy.length === 0 ? <Shimmer/> : (
+    return resList.length === undefined ? <Shimmer/> : (
         <>
             <main className="main">
                 <div className="res-container">
                     {
-                        resListCopy.map((res, index) => {
+                        resList.map((res, index) => {
                             return (
                                 <RestaurantCard resData={res} key={index} />
                             )

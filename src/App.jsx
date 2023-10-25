@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { RESTAURANTS_URL } from "./utils/constants";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Home from './pages/Home';
@@ -9,30 +8,21 @@ import Contact from "./pages/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./pages/Login";
+import useFetchResList from './utils/hooks/useFetchResList';
+
 
 
 const AppLayout = () => {
     
-    const [resList, setResList] = useState([]);
-    const [resListCopy, setResListCopy] = useState([]);
+    let resList = useFetchResList();
     const [loginBtn, setLoginBtn] = useState('Login');
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-    
-    const fetchData = async () => {
-        const data = await fetch(RESTAURANTS_URL);
-        const json = await data.json();
-        const resArray = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-        setResList(resArray);
-        setResListCopy(resArray);
-    }
+    console.log(resList);
 
     return (
         <div className="app">
-            <Header resList={resList} resListCopy={resListCopy} setResListCopy={setResListCopy} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
-            <Outlet context={resListCopy}/>
+            <Header resList={resList} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
+            <Outlet context={resList}/>
         </div>
     )
 }

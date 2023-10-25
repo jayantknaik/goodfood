@@ -12,9 +12,7 @@ const RestaurantMenu = () => {
   let resMenu = useFetchResMenu(resId);
   const {name, avgRating, totalRatingsString, cuisines, areaName, costForTwo, cloudinaryImageId} = resInfo;
   
-  if (resInfo.length===0) return <Shimmer />;
-  
-  return (
+  return resMenu == null ? <Shimmer /> : (
     <>
       <div className="menu">
           <img className="menu__img" src={IMG_URL + cloudinaryImageId} alt="" />
@@ -29,7 +27,7 @@ const RestaurantMenu = () => {
                     <div className="menu__rating-total">{ totalRatingsString }</div>
                   </div>
                 </div>
-                <div className="menu__cuisines">{ cuisines }</div>
+                <div className="menu__cuisines">{ cuisines.join(", ") }</div>
               </div>
 
               <div className="menu__info-container second">
@@ -49,7 +47,7 @@ const RestaurantMenu = () => {
                         <li key={id} className="menu__item">
                           <div className="menu__item__info">
                             <div className="menu__item__name">{name}</div>
-                            <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? price/100 : defaultPrice/100}</div>
+                            <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
                             <div className="menu__item__desc">{description}</div>
                           </div>
                           <img className="menu__item__image" src={IMG_URL + imageId} alt="food-image" />
