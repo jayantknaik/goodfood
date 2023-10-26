@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from "./components/Header";
@@ -6,10 +6,11 @@ import Home from './pages/Home';
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Error from "./components/Error";
-import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./pages/Login";
 import useFetchResList from './utils/hooks/useFetchResList';
-
+import Shimmer from "./components/Shimmer";
+const Grocery = lazy(() => import("./components/Grocery"));
+const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 
 
 const AppLayout = () => {
@@ -46,12 +47,16 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/restaurants/:resId',
-                element: <RestaurantMenu />
+                element: <Suspense fallback={<Shimmer/>}><RestaurantMenu /></Suspense>
             },
             {
                 path: '/login',
                 element: <Login />
-            }
+            },
+            {
+                path: '/grocery',
+                element:<Suspense fallback={<Shimmer/>}><Grocery /></Suspense>
+            },
         ],
         errorElement: <Error />
     }, 

@@ -21,6 +21,7 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                 <Search resList={resList} />
                 <nav className="nav">
                     <Link to="/" className="nav-item">Home</Link>
+                    <Link to="/grocery" className="nav-item">Grocery</Link>
                     <Link to="/about" className="nav-item">About Us</Link>
                     <Link to="/contact" className="nav-item">Contact Us</Link>
                     <Link to="/" className="nav-item">Cart</Link>

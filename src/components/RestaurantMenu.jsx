@@ -21,18 +21,18 @@ const RestaurantMenu = () => {
 
               <div className="menu__info-container first">
                 <div className="menu__row">
-                  <div className="menu__name">{ name }</div>
+                  <div className="menu__name">{name}</div>
                   <div className="menu__rating-container">
-                    <div className="menu__rating">{ avgRating }</div>
-                    <div className="menu__rating-total">{ totalRatingsString }</div>
+                    <div className="menu__rating">{avgRating}</div>
+                    <div className="menu__rating-total">{totalRatingsString}</div>
                   </div>
                 </div>
-                <div className="menu__cuisines">{ cuisines.join(", ") }</div>
+                <div className="menu__cuisines">{cuisines.join(", ")}</div>
               </div>
 
               <div className="menu__info-container second">
-                <div className="menu__area">{ areaName }</div>
-                <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{ costForTwo / 100 } for two</div>
+                <div className="menu__area">{areaName}</div>
+                <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{costForTwo/100} for two</div>
               </div>
 
               <div className="menu__info-container third">

@@ -11,13 +11,15 @@
     grid-template-columns: 300px 1fr;
     gap: 30px;
     max-width: 1140px;
-    margin: 120px auto 0;
+    margin: 120px auto 40px;
     &__img {
+        position: sticky;
         height: 400px;
         object-fit: cover;
         border: 1px solid #e8e8e8;
         border-radius: 20px;
         opacity: 0.9;
+        top: 120px;
         &-dummy {
             position: absolute;
             width: 300px;
@@ -29,8 +31,6 @@
         }
     }
     &__info {
-        height: 480px;
-        overflow: hidden;
         &__scroll {
             height: 100%;
             overflow: auto;
