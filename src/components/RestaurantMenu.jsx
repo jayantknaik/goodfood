@@ -50,7 +50,10 @@ const RestaurantMenu = () => {
                             <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
                             <div className="menu__item__desc">{description}</div>
                           </div>
-                          <img className="menu__item__image" src={IMG_URL + imageId} alt="food-image" />
+                          <div className="menu__item__image-container">
+                            <img className="menu__item__image" src={IMG_URL + imageId} alt="food-image" />
+                            <button className="menu__item__cta">Add +</button>
+                          </div>
                         </li>
                       )
                     })

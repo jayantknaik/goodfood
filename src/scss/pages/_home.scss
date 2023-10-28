@@ -1,15 +1,65 @@
-.main {
+.home {
     max-width: 1140px;
     margin: 120px auto 0;
+    &__head {
+        max-width: 600px;
+        font-size: 52px;
+        font-weight: 700;
+        color: #303030;
+        text-align: center;
+        margin: 0 auto;
+        &-container {
+            border: 1px solid #303030;
+            background: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1002,h_600/v1678428358/portal/m/seo_web/dweb_header.png') no-repeat;
+            background-size: 40%;
+            // background-position: 700px 100px;
+            padding: 0 0 60px;
+            margin:  0 0 32px;
+        }
+    }
+    &__title {
+        font-size: 26px;
+        line-height: 34px;
+        font-weight: 700;
+        color: #303030;
+        padding: 0 0 16px;
+    }
+    &__container {
+        &#offers {
+            overflow: hidden;
+        }
+        &#topRes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        padding: 0 0 32px;
+    }
+    &__swiper {
+        display: flex;
+        gap: 32px;
+        overflow: auto;
+        padding: 0 0 8px;
+        &__slide {
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        &__img {
+            height: 252px;
+        }
+        &::-webkit-scrollbar {
+            height: 8px;
+            background-color: #f3f3f3;
+            border-radius: 50px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #d7d7d7;
+            border-radius: 50px;
+        }
+    }
 }
 
 .res {
-    &-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 32px;
-        padding: 0 0 16px;
-    }
     &-card {
         border-radius: 8px;
         overflow: hidden;

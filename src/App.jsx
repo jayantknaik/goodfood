@@ -18,8 +18,6 @@ const AppLayout = () => {
     let resList = useFetchResList();
     const [loginBtn, setLoginBtn] = useState('Login');
 
-    console.log(resList);
-
     return (
         <div className="app">
             <Header resList={resList} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
