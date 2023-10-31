@@ -2,18 +2,21 @@
     max-width: 1140px;
     margin: 120px auto 0;
     &__head {
-        max-width: 600px;
-        font-size: 52px;
+        max-width: 560px;
+        font-size: 42px;
         font-weight: 700;
-        color: #303030;
+        color: #fff;
         text-align: center;
         margin: 0 auto;
-        &-container {
-            border: 1px solid #303030;
-            background: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1002,h_600/v1678428358/portal/m/seo_web/dweb_header.png') no-repeat;
-            background-size: 40%;
-            // background-position: 700px 100px;
-            padding: 0 0 60px;
+        &-container {   
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;         
+            background: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png') no-repeat;
+            background-size: cover;
+            background-position: 0 -80px;
+            border-radius: 16px;
             margin:  0 0 32px;
         }
     }
@@ -61,7 +64,7 @@
 
 .res {
     &-card {
-        border-radius: 8px;
+        border-radius: 16px;
         overflow: hidden;
         transition: 0.3s all ease;
         text-decoration: none;
@@ -75,7 +78,7 @@
         &__info {
             border: 1px solid #f3f3f3;
             border-top: 0;
-            border-radius: 0 0 8px 8px;
+            border-radius: 0 0 16px 16px;
             padding: 8px;
         }
         &__row {
