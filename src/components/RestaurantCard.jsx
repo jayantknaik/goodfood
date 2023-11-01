@@ -23,4 +23,15 @@ const RestaurantCard = ({resData}) => {
     )
 }
 
+export const withOneBenefits = (RestaurantCard) => {
+    return () => {
+        return (
+            <div>
+                <label>One</label>
+                <RestaurantCard />
+            </div>
+        )
+    }
+}
+
 export default RestaurantCard;

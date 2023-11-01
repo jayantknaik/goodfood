@@ -1,17 +1,30 @@
 .shimmer {
-    &-container {
-        max-width: 1140px;
+    max-width: 1140px;
+    margin: 120px auto 16px;
+    &__intro {
+        height: 200px;
+        border-radius: 16px;
+        background-color: #f3f3f3;
+        margin: 0 0 32px;
+    }
+    &__title {
+        width: 226px;
+        height: 34px;
+        background-color: #f3f3f3;
+        border-radius: 8px;
+        margin: 0 0 16px;
+    }
+/*     &__container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 32px;
-        margin: 120px auto 16px;
     }
-    &-card {
+    &__card {
         position: relative;
         width: 261px;
         height: 217px;
         background-color: #f3f3f3;
-        border-radius: 8px;
+        border-radius: 16px;
         overflow: hidden;
         &::before {
             content: '';
@@ -23,5 +36,19 @@
             bottom: 0;
             left: 0;
         }
+    } */
+    &__swiper {
+        display: flex;
+        gap: 32px;
+        padding: 0 0 8px;
+        overflow: hidden;
+    }
+    &__slide {
+        width: 422px;
+        height: 252px;
+        background-color: #f3f3f3;
+        border-radius: 16px;
+        overflow: hidden;
+        flex-shrink: 0;
     }
 }
