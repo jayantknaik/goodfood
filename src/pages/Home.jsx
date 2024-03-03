@@ -1,5 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
-import RestaurantCard, {withOneBenefits} from '../components/RestaurantCard';
+import RestaurantCard, {isVeg} from '../components/RestaurantCard';
 import Shimmer from '../components/Shimmer';
 import useFetchResPromo from '../utils/hooks/useFetchResPromo';
 import { IMG_URL } from '../utils/constants';
@@ -9,8 +9,9 @@ const Home = () => {
     
     const resList = useOutletContext();
     const resPromo = useFetchResPromo();
+    const VegRestaurantCard = isVeg(RestaurantCard);
 
-    return resList.length === undefined || resPromo === null ? <Shimmer/> : (
+    return resList === undefined || resPromo === null ? <Shimmer/> : (
         <div className="home">
             <div className="home__head-container">
                 <div className="home__head">Order Food At Your Doorstep Now!</div>
@@ -26,16 +27,15 @@ const Home = () => {
                                 </Link>
                             )
                         })
-                    }
+                    } 
                 </div>
             </div>
             <div className="home__title">Top restaurant chains in Bangalore</div>
             <div className="home__container" id='topRes'>
                 {
                     resList.map((res) => {
-                        console.log(res);
                         return (
-                            <RestaurantCard resData={res} key={res.info.id} />
+                            res.info.veg === true ? <VegRestaurantCard resData={res} key={res.info.id} /> : <RestaurantCard resData={res} key={res.info.id} /> 
                         )
                     })
                 }

@@ -22,8 +22,9 @@ const Search = ({resList}) => {
         setSearchText('');
         searchDD.classList.remove('show');
     }
-
+    
     const closeDD = () => {
+        setSearchText('');
         searchDD.classList.remove('show');
     }
 

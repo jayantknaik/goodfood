@@ -12,7 +12,7 @@ const useFetchResList = () => {
     const fetchResList = async () => {
         const data = await fetch(RESTAURANTS_URL);
         const json = await data.json();
-        setResList(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     return resList;

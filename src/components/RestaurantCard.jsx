@@ -23,12 +23,11 @@ const RestaurantCard = ({resData}) => {
     )
 }
 
-export const withOneBenefits = (RestaurantCard) => {
-    return () => {
+export const isVeg = (RestaurantCard) => {
+    return (props) => {
         return (
-            <div>
-                <label>One</label>
-                <RestaurantCard />
+            <div className="res-card__veg">
+                <RestaurantCard {...props} />
             </div>
         )
     }

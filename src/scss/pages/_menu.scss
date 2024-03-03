@@ -12,6 +12,16 @@
     gap: 30px;
     max-width: 1140px;
     margin: 120px auto 40px;
+    &__category {
+        padding: 26px 0 36px;
+        border-bottom: 1px dashed #d7d7d7;
+        &:first-child {
+            padding: 0 0 36px;
+        }
+        &:last-child {
+            border: none;
+        }        
+    }
     &__img {
         position: sticky;
         height: 400px;
@@ -74,7 +84,7 @@
     }
     &__name {
         max-width: 608px;
-        font-size: 52px;
+        font-size: 42px;
         font-weight: 600;
         color: #303030;
         overflow: hidden;
@@ -134,11 +144,11 @@
         }
     }
     &__head {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 22px;
+        line-height: 26px;
         font-weight: 700;
         color: #303030;
-        padding: 0 0 16px;
+        padding: 0 0 24px;
     }
     &__list {
         display: flex;
@@ -150,7 +160,6 @@
     &__item {
         display: grid;
         grid-template-columns: 1fr 150px;
-        align-items: center;
         gap: 16px;
         &__image {
             width: 100%;
@@ -174,7 +183,6 @@
         }
         &__name {
             max-width: 540px;
-            font-weight: 600;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
