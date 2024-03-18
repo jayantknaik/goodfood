@@ -12,6 +12,7 @@ import Shimmer from "./components/Shimmer";
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
 import { Provider } from "react-redux";
 import store from './utils/redux/store';
+import Cart from "./pages/Cart";
 
 const AppLayout = () => {
     
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact />
+            },
+            {
+                path: '/cart',
+                element: <Cart />
             },
             {
                 path: '/restaurants/:resId',

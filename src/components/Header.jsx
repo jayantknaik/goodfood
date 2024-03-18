@@ -26,7 +26,7 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                     <Link to="/" className="nav-item">Home</Link>
                     <Link to="/about" className="nav-item">About Us</Link>
                     <Link to="/contact" className="nav-item">Contact Us</Link>
-                    <Link to="/" className="nav-item">Cart - <span className="nav-item__cart">{cartItems.length}</span></Link>
+                    <Link to="/cart" className="nav-item">Cart - <span className="nav-item__cart">{cartItems.length}</span></Link>
                     <Link to='/login' className="nav-button" onClick={changeBtnName}>{loginBtn}</Link>
                 </nav>
             </div>
