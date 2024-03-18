@@ -1,9 +1,12 @@
+import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import useFetchResInfo from '../utils/hooks/useFetchResInfo';
 import useFetchResCategories from "../utils/hooks/useFetchResCategories";
 import { IMG_URL } from "../utils/constants";
+import FoodNotFound from "../.././assets/images/dummyFood.jpg";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
 
@@ -11,11 +14,43 @@ const RestaurantMenu = () => {
     let resInfo = useFetchResInfo(resId);
     let resCategories = useFetchResCategories(resId);
     const {name, avgRating, totalRatingsString, cuisines, areaName, costForTwo, cloudinaryImageId} = resInfo;
-  
+    const [scrollUpArrow, setScrollUpArrow] = useState(false);
+    const [isExpanded, setIsExpanded] = useState('cat-0');
+
+    useEffect = (() => {
+
+        const handleScroll = () => {
+
+            console.log('scrolling');
+
+            if(window.scrollY > 100) {
+                setScrollUpArrow(true);
+            }
+            else {
+                setScrollUpArrow(false);
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+
+    }, [])
+
+    const scrollUp = () => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    }
+
+    const toggleCategory = ({id}) => {
+        isExpanded === id ? setIsExpanded('') : setIsExpanded(id);
+    }
+
     return resCategories == null ? <Shimmer /> : 
     <>
         <div className="menu">
-            <img className="menu__img" src={IMG_URL + cloudinaryImageId} alt="" />
+            <img className="menu__img" src={IMG_URL + cloudinaryImageId} onError={(e) => e.target.src = FoodNotFound} alt="" />
             <div className="menu__info">
                 <div className="menu__info__scroll">
 
@@ -42,38 +77,16 @@ const RestaurantMenu = () => {
                         const { title, itemCards } = item.card.card;
 
                         return (
-                            <div className="menu__category" key={index}>
-                                <div className="menu__head">{title}</div>
-                                <div className="menu__list">
-                                {
-                                    itemCards.map((li) => {
-
-                                        const {id, name, description, imageId, price, defaultPrice} = li.card.info;
-                                    
-                                        return (
-                                            <li key={id} className="menu__item">
-                                                <div className="menu__item__info">
-                                                    <div className="menu__item__name">{name}</div>
-                                                    <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
-                                                    <div className="menu__item__desc">{description}</div>
-                                                </div>
-                                                <div className="menu__item__image-container">
-                                                    <img className="menu__item__image" src={IMG_URL + imageId} alt="food-image" />
-                                                    <button className="menu__item__cta">Add +</button>
-                                                </div>
-                                            </li>
-                                        )
-
-                                    })
-                                }
-                                </div>
-                            </div>
+                            <RestaurantCategory id={`cat-${index}`} key={`cat-${index}`} title={title} itemCards={itemCards} isExpanded={isExpanded} toggleCategory={toggleCategory} />
                         )})
                     }
                     </div>
 
                 </div>
             </div>
+            {
+                scrollUpArrow && <div className="menu__scrollUp" onClick={() => scrollUp()}></div>
+            }
         </div>
 
         <Footer type="fixed"/>

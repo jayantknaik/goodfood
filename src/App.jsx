@@ -9,9 +9,9 @@ import Error from "./components/Error";
 import Login from "./pages/Login";
 import useFetchResList from './utils/hooks/useFetchResList';
 import Shimmer from "./components/Shimmer";
-const Grocery = lazy(() => import("./components/Grocery"));
 const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
-
+import { Provider } from "react-redux";
+import store from './utils/redux/store';
 
 const AppLayout = () => {
     
@@ -19,10 +19,12 @@ const AppLayout = () => {
     const [loginBtn, setLoginBtn] = useState('Login');
 
     return (
-        <div className="app">
-            <Header resList={resList} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
-            <Outlet context={resList}/>
-        </div>
+        <Provider store={store}>
+            <div className="app" >
+                <Header resList={resList} loginBtn={loginBtn} setLoginBtn={setLoginBtn} />
+                <Outlet context={resList}/>
+            </div>
+        </Provider>
     )
 }
 
@@ -50,10 +52,6 @@ const appRouter = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
-            },
-            {
-                path: '/grocery',
-                element:<Suspense fallback={<Shimmer/>}><Grocery /></Suspense>
             },
         ],
         errorElement: <Error />

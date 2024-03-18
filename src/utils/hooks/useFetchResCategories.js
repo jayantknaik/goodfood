@@ -12,7 +12,7 @@ const useFetchResCategories = (resId) => {
     const fetchResCategories = async () => {
         const data = await fetch(MENU_URL + resId);
         const json = await data.json();
-        setResCategories(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item) => item.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"));
+        setResCategories(json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item) => item.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"));
     }
     return resCategories;
 }
