@@ -16,11 +16,11 @@ const Home = () => {
             <div className="home__head-container">
                 <div className="home__head">Order Food At Your Doorstep Now!</div>
             </div>
-            <div className="home__title">Best offers for you</div>
+            <div className="home__title">{resPromo.header.title}</div>
             <div className="home__container" id='offers'>
                 <div className="home__swiper">
                     {
-                        resPromo.map((promo) => {
+                        resPromo.imageGridCards.info.map((promo) => {
                             return (
                                 <Link to={'/restaurants/'+promo.entityId} className="home__swiper__slide" key={promo.id}>
                                     <img className="home__swiper__img" src={IMG_URL + promo.imageId} alt="swiper-img" />

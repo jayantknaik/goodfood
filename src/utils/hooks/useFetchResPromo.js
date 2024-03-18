@@ -12,7 +12,7 @@ const useFetchResPromo = (resId) => {
     const fetchResPromo = async () => {
         const data = await fetch(RESTAURANTS_URL + resId);
         const json = await data.json();
-        setResPromo(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+        setResPromo(json?.data?.cards[0]?.card?.card);
     }
     return resPromo;
 }
