@@ -1,5 +1,5 @@
-import { IMG_URL } from "../utils/constants";
-import FoodNotFound from "../.././assets/images/dummyFood.jpg";
+import { IMG_URL } from "../../utils/constants";
+import FoodNotFound from "../../../assets/images/dummyFood.jpg";
 
 const RestaurantMenuItem = ({data, addFoodItem}) => {
 

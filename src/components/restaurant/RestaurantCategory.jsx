@@ -1,7 +1,5 @@
-import { IMG_URL } from "../utils/constants";
-import FoodNotFound from "../.././assets/images/dummyFood.jpg";
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/redux/cartSlice";
+import { addItem } from "../../utils/redux/cartSlice";
 import RestaurantMenuItem from "./RestaurantMenuItem";
 
 const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) => {

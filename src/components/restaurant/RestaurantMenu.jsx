@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "../Shimmer";
 import { useParams } from "react-router-dom";
-import Footer from "./Footer";
-import useFetchResInfo from '../utils/hooks/useFetchResInfo';
-import useFetchResCategories from "../utils/hooks/useFetchResCategories";
-import { IMG_URL } from "../utils/constants";
-import FoodNotFound from "../.././assets/images/dummyFood.jpg";
+import Footer from "../Footer";
+import useFetchResInfo from '../../utils/hooks/useFetchResInfo';
+import useFetchResCategories from "../../utils/hooks/useFetchResCategories";
+import { IMG_URL } from "../../utils/constants";
+import FoodNotFound from "../../../assets/images/dummyFood.jpg";
 import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
@@ -36,7 +36,7 @@ const RestaurantMenu = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-
+        
     }, [])
 
     const scrollUp = () => {
@@ -84,9 +84,7 @@ const RestaurantMenu = () => {
 
                 </div>
             </div>
-            {
-                scrollUpArrow && <div className="menu__scrollUp" onClick={() => scrollUp()}></div>
-            }
+            <div className="menu__scrollUp" onClick={() => scrollUp()}></div>
         </div>
 
         <Footer type="fixed"/>

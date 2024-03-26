@@ -1,5 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
-import RestaurantCard, {isVeg} from '../components/RestaurantCard';
+import RestaurantCard, {isVeg} from '../components/restaurant/RestaurantCard';
 import Shimmer from '../components/Shimmer';
 import useFetchResPromo from '../utils/hooks/useFetchResPromo';
 import { IMG_URL } from '../utils/constants';

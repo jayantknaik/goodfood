@@ -9,7 +9,7 @@ import Error from "./components/Error";
 import Login from "./pages/Login";
 import useFetchResList from './utils/hooks/useFetchResList';
 import Shimmer from "./components/Shimmer";
-const RestaurantMenu = lazy(() => import("./components/RestaurantMenu"));
+const RestaurantMenu = lazy(() => import("./components/restaurant/RestaurantMenu"));
 import { Provider } from "react-redux";
 import store from './utils/redux/store';
 import Cart from "./pages/Cart";
