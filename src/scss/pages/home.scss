@@ -1,7 +1,5 @@
 // COMPONENTS
 @use '../components/search';
-@use '../components/nav';
-@use '../components/header';
 
 // STYLES
 
@@ -54,6 +52,8 @@
         &__slide {
             flex-shrink: 0;
             cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
         }
         &__img {
             height: 252px;

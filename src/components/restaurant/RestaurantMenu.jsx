@@ -7,6 +7,7 @@ import useFetchResCategories from "../../utils/hooks/useFetchResCategories";
 import { IMG_URL } from "../../utils/constants";
 import FoodNotFound from "../../../assets/images/dummyFood.jpg";
 import RestaurantCategory from "./RestaurantCategory";
+import '../../scss/pages/menu.scss';
 
 const RestaurantMenu = () => {
 

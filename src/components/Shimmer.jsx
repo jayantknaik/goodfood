@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import '../scss/pages/shimmer.scss';
 
 const Shimmer = () => {
     useEffect(() => {
