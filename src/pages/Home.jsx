@@ -1,9 +1,10 @@
 import { useOutletContext } from 'react-router-dom';
-import RestaurantCard, {isVeg} from '../components/RestaurantCard';
+import RestaurantCard, {isVeg} from '../components/restaurant/RestaurantCard';
 import Shimmer from '../components/Shimmer';
 import useFetchResPromo from '../utils/hooks/useFetchResPromo';
 import { IMG_URL } from '../utils/constants';
 import { Link } from 'react-router-dom';
+import '../scss/pages/home.scss';
 
 const Home = () => {
     
@@ -11,7 +12,7 @@ const Home = () => {
     const resPromo = useFetchResPromo();
     const VegRestaurantCard = isVeg(RestaurantCard);
 
-    return resList === undefined || resPromo === null ? <Shimmer/> : (
+    return resList.length === undefined || resPromo === null ? <Shimmer/> : (
         <div className="home">
             <div className="home__head-container">
                 <div className="home__head">Order Food At Your Doorstep Now!</div>

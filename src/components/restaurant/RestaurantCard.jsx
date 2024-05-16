@@ -1,4 +1,4 @@
-import { IMG_URL } from "../utils/constants";
+import { IMG_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
 
 const RestaurantCard = ({resData}) => {
