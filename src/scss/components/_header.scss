@@ -1,24 +1,23 @@
 .header {
     position: fixed;
-    width: 100%;
-    max-width: 1220px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 50px;
-    background-color: #fff;
-    box-shadow: 0 4px 2.5rem rgba(0,0,0,.08);
-    padding: 16px 48px;
+    top: 0;
     left: 50%;
-    top: 20px;
     translate: -50% 0;
-    margin: auto;
+    width: 100%;
+    padding: 20px 0 0;
+    background-color: #FDFCFA;
     z-index: 99;
     &-wrapper {
         width: 100%;
+        max-width: 1220px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-radius: 50px;
+        background-color: #fff;
+        box-shadow: 0 4px 2.5rem rgba(0,0,0,.08);
+        padding: 16px 48px;
+        margin: auto;
     }
 }
 
