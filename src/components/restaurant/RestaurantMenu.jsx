@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
     const [scrollUpArrow, setScrollUpArrow] = useState(false);
     const [isExpanded, setIsExpanded] = useState('cat-0');
 
-    useEffect = (() => {
+    useEffect(() => {
 
         const handleScroll = () => {
 

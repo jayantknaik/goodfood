@@ -1,33 +1,37 @@
 {
-  "name": "good-food",
-  "version": "1.0.0",
-  "description": "React App",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jayantknaik/namaste-react.git"
-  },
-  "author": "Jayant Kumar Naik",
-  "license": "ISC",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.9.3",
-    "parcel": "^2.9.3",
-    "process": "^0.11.10",
-    "sass": "^1.68.0"
-  },
-  "dependencies": {
-    "@reduxjs/toolkit": "^2.2.1",
-    "formik": "^2.4.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^9.1.0",
-    "react-router-dom": "^6.17.0"
-  },
-  "browserslist": [
-    "last 3 versions"
-  ]
+    "homepage": "https://jayantknaik.github.io/GoodFood",
+    "name": "good-food",
+    "version": "1.0.0",
+    "description": "React App",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "test": "jest",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jayantknaik/GoodFood"
+    },
+    "author": "Jayant Kumar Naik",
+    "license": "ISC",
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.9.3",
+        "gh-pages": "^6.1.1",
+        "parcel": "^2.9.3",
+        "process": "^0.11.10",
+        "sass": "^1.68.0"
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^2.2.1",
+        "formik": "^2.4.5",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-redux": "^9.1.0",
+        "react-router-dom": "^6.17.0"
+    },
+    "browserslist": [
+        "last 3 versions"
+    ]
 }
