@@ -22,8 +22,6 @@ const RestaurantMenu = () => {
 
         const handleScroll = () => {
 
-            console.log('scrolling');
-
             if(window.scrollY > 100) {
                 setScrollUpArrow(true);
             }

@@ -1,43 +1,46 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Search = ({resList}) => {
 
     let currText;
 
-    const searchBar = document.getElementById('search');
-    const searchDD = document.getElementById('search-dd');
+    const searchBar = useRef(null);
+    const searchDD = useRef(null);
     const [searchText, setSearchText] = useState('');
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     const updateInput = (e) => {
         currText = e.target.value;
         setSearchText(currText);
-        currText.length > 0 ? searchDD.classList.add('show') : searchDD.classList.remove('show');
+        currText.length > 0 ? searchDD.current.classList.add('show') : searchDD.current.classList.remove('show');
         setFilteredRestaurants(resList.filter((res) => res.info.name.toLowerCase().includes(currText.toLowerCase())));
     }
 
     const filterRes = () => {
-        searchBar.value.length == 0 ? setResListCopy(resList) : setResListCopy(filteredRestaurants);
+        searchBar.current.value.length == 0 ? setResListCopy(resList) : setResListCopy(filteredRestaurants);
         setSearchText('');
-        searchDD.classList.remove('show');
+        searchDD.current.classList.remove('show');
     }
     
     const closeDD = () => {
         setSearchText('');
-        searchDD.classList.remove('show');
+        searchDD.current.classList.remove('show');
     }
 
     return (
         <div className="search-container">
-            <input type="text" id="search" className="search" value={searchText} placeholder="Search Restaurants" autoComplete="off" onChange={(e) => {updateInput(e)}} />
+            <input type="text" id="search" className="search" ref={searchBar} value={searchText} placeholder="Search Restaurants" autoComplete="off" onChange={(e) => {updateInput(e)}} />
             <button type="button" className="search-button" onClick={filterRes}></button>
-            <div className="search__list-wrapper" id="search-dd">
+            <div className="search__list-wrapper" id="search-dd" ref={searchDD}>
                 <div className="search__list">
                     {
                         filteredRestaurants.map((res) => {
+
+                            const {id} = res.info;
+
                             return (
-                                <Link to={'/restaurants/' + res.info.id} key={res.info.id} className="search__list-item" onClick={closeDD}><div className="search__list-text">{res.info.name}</div></Link>
+                                <Link to={'/restaurants/' + id} key={id} className="search__list-item" onClick={closeDD}><div className="search__list-text">{res.info.name}</div></Link>
                             )
                         })
                     }

@@ -1,5 +1,5 @@
 {
-    "homepage": "https://jayantknaik.github.io/GoodFood",
+    "homepage": "https://jayantknaik.github.io/GoodFood/",
     "name": "good-food",
     "version": "1.0.0",
     "description": "React App",
@@ -17,8 +17,13 @@
     "author": "Jayant Kumar Naik",
     "license": "ISC",
     "devDependencies": {
+        "@babel/core": "^7.24.5",
+        "@babel/preset-env": "^7.24.5",
         "@parcel/transformer-sass": "^2.9.3",
+        "@testing-library/react": "^15.0.7",
+        "babel-jest": "^29.7.0",
         "gh-pages": "^6.1.1",
+        "jest": "^29.7.0",
         "parcel": "^2.9.3",
         "process": "^0.11.10",
         "sass": "^1.68.0"

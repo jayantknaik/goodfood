@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../../utils/redux/cartSlice";
+import { removeItem } from "../../utils/redux/cartSlice";
 import RestaurantMenuItem from "./RestaurantMenuItem";
 
 const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) => {
@@ -8,6 +9,10 @@ const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) 
 
     const addFoodItem = (item) => {
         dispatch(addItem(item))
+    }
+
+    const removeFoodItem = (id) => {
+        dispatch(removeItem(id));
     }
 
     return (
@@ -23,7 +28,7 @@ const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) 
                     const {id} = li.card.info;
 
                     return (
-                        <RestaurantMenuItem data={li} key={id} addFoodItem={addFoodItem} />
+                        <RestaurantMenuItem data={li} key={id} addFoodItem={addFoodItem} removeFoodItem={removeFoodItem} />
                     )
 
                 })

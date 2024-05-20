@@ -24,17 +24,18 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                 <Search resList={resList} />
                 <nav className="nav">
                     {/* <Link to="/" className="nav__item">Home</Link> */}
-                    {/* <Link to="/about" className="nav__item">About Us</Link> */}
                     {/* <Link to="/contact" className="nav__item">Contact Us</Link> */}
-                    <div className="nav__item">
-                        <div className="nav__item__cnt">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                            </svg>Profile
+                    <Link to="/about" className="nav__item">
+                        <div className="nav__item">
+                            <div className="nav__item__cnt">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                </svg>Profile
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                     <div className="nav__item">
                         <div className="nav__item__cnt">
                             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -53,7 +54,7 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                                 <path d="M6 5l14 1l-1 7h-13" />
                             </svg>
                             Cart
-                            {/* <div className="nav__item__cart__num">{cartItems.length}</div> */}
+                            <div className="nav__item__cnt__num">{cartItems.length}</div>
                         </div>
                     </Link>
                     {/* <Link to='/login' className="nav__button" onClick={changeBtnName}>{loginBtn}</Link> */}
