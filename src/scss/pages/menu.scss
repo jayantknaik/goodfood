@@ -1,5 +1,5 @@
-// COMPONENTS
 @use '../components/footer';
+@use '../base/variables' as *;
 
 // STYLES
 .rupees-arial {
@@ -309,12 +309,27 @@
                 left: 50%;
                 translate: -50% -50%;
             }
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 1px;
+                height: 16px;
+                background-color: $gray-700;
+                top: -2px;
+                left: -10px;
+            }
         }
         &__nonVeg {
             border: 2px solid #d8232a;
             &::before {
                 background-color: #d8232a;
             }
+        }
+        &__row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
     }
     &__scrollUp {

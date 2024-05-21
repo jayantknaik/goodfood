@@ -11,15 +11,35 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem}) => {
 
     useEffect(() => {
 
+        let count = 0;
+
         cartItems.map((item) => {
-            return item.card.info.id === id && setQuantity(quantity + 1);
+            if (item.card.info.id === id) {
+                count++;
+            }
         })
+
+        setQuantity(count);
         
     }, [])
+
+    useEffect(() => {
+        console.log(cartItems);
+    }, [cartItems])
 
     const addItem = () => {
         addFoodItem(data);
         setQuantity(quantity + 1);
+        // if( quantity >= 1 ) {
+
+        //     let index = cartItems.findIndex(item => item.card.info.id === id);
+        //     if (index !== -1) {
+        //         cartItems[index].card.info.quantity = quantity;
+        //     }
+
+        // }
+        // else {
+        // }
     }
 
     const removeItem = () => {
@@ -30,8 +50,10 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem}) => {
     return (
         <li id={id} className="menu__item">
             <div className="menu__item__info">
-                {itemAttribute.vegClassifier === 'VEG' ? <div className="menu__item__veg"></div> : <div className="menu__item__nonVeg"></div>}
-                <div className="menu__item__name">{name}</div>
+                <div className="menu__item__row">
+                    <div className="menu__item__name">{name}</div>
+                    {itemAttribute.vegClassifier === 'VEG' ? <div className="menu__item__veg"></div> : <div className="menu__item__nonVeg"></div>}
+                </div>
                 <div className="menu__item__cost"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
                 <div className="menu__item__desc">{description}</div>
             </div>

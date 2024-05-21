@@ -27,9 +27,9 @@ const CartItem = ({data}) => {
                     <div className="cart__item__desc">{description}</div>
                 </div>
             </div>
-            <div className="cart__item__price"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
-            <div className="cart__item__quantity">{quantity}</div>
-            <div className="cart__item__total"><span className="rupees-arial">&#8377;</span>{totalPrice}</div>
+            <div className="cart__item__val"><span className="rupees-arial">&#8377;</span>{price ? Math.round(price/100) : Math.round(defaultPrice/100)}</div>
+            <div className="cart__item__val">{quantity}</div>
+            <div className="cart__item__val"><span className="rupees-arial">&#8377;</span>{totalPrice}</div>
         </li>
     )
 

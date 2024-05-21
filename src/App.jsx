@@ -9,10 +9,11 @@ import Error from "./components/Error";
 import Login from "./pages/Login";
 import useFetchResList from './utils/hooks/useFetchResList';
 import Shimmer from "./components/Shimmer";
-const RestaurantMenu = lazy(() => import("./components/restaurant/RestaurantMenu"));
+const RestaurantMenu = lazy(() => import("./pages/RestaurantMenu"));
 import { Provider } from "react-redux";
 import store from './utils/redux/store';
 import Cart from "./pages/Cart";
+const Collection = lazy(() => import("./pages/Collection"));
 
 const AppLayout = () => {
     
@@ -57,6 +58,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/collection/:collectionId',
+                element: <Suspense fallback={<Shimmer/>}><Collection /></Suspense>
             },
         ],
         errorElement: <Error />

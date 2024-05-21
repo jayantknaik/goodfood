@@ -3,6 +3,7 @@ import CartItem from "../components/cart/CartItem";
 import CartEmpty from "../components/cart/CartEmpty";
 import '../scss/pages/cart.scss';
 import { clearCart } from "../utils/redux/cartSlice";
+import { useEffect } from "react";
 
 const Cart = () => {
 
@@ -12,6 +13,12 @@ const Cart = () => {
     const clearCartItems = (cartItems) => {
         dispatch(clearCart(cartItems));
     }
+
+    useEffect(() => {
+
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+
+    }, [])
 
     return (
         <>

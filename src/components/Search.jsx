@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 const Search = ({resList}) => {
 
-    let currText;
-
     const searchBar = useRef(null);
     const searchDD = useRef(null);
     const [searchText, setSearchText] = useState('');

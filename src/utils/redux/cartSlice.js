@@ -3,11 +3,34 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        items: []
+        items: [],
+        restaurants: [
+            {
+                key: "restaurants id",
+                value: {
+                    key: "item id",
+                    value: {
+                        id: "",
+                        name: "",
+                        desc: "",
+                        quantity: "",
+                        img: ""
+                    }
+                }
+            }
+        ]
     },
     reducers: {
         addItem: (state, action) => {
-            state.items.push(action.payload);
+
+            const {id, name, description, imageId, price, defaultPrice, itemAttribute} = action.payload.card.info;
+
+            state.items.push({
+                key: id,
+                value: {
+                }
+            });
+            // state.restaurants.map(el => ({}))
         },
         removeItem: (state, action) => {
             
