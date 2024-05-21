@@ -23,14 +23,8 @@ const cartSlice = createSlice({
     reducers: {
         addItem: (state, action) => {
 
-            const {id, name, description, imageId, price, defaultPrice, itemAttribute} = action.payload.card.info;
-
-            state.items.push({
-                key: id,
-                value: {
-                }
-            });
-            // state.restaurants.map(el => ({}))
+            state.items.push(action.payload);
+        
         },
         removeItem: (state, action) => {
             
