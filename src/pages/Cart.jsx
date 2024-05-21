@@ -3,6 +3,7 @@ import CartItem from "../components/cart/CartItem";
 import CartEmpty from "../components/cart/CartEmpty";
 import '../scss/pages/cart.scss';
 import { clearCart } from "../utils/redux/cartSlice";
+import { useEffect } from "react";
 
 const Cart = () => {
 
@@ -13,7 +14,11 @@ const Cart = () => {
         dispatch(clearCart(cartItems));
     }
 
-    console.log(cartItems);
+    useEffect(() => {
+
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+
+    }, [])
 
     return (
         <>
@@ -24,6 +29,12 @@ const Cart = () => {
                         <div className="cart__lt__top">
                             <div className="cart__head">Cart {`(${cartItems.length})`}</div>
                             <div className="cart__clearAll" onClick={()=>{clearCartItems(cartItems)}}>Clear All</div>
+                        </div>
+                        <div className="cart__details">
+                            <div className="cart__details__item">Product Details</div>
+                            <div className="cart__details__item">Price</div>
+                            <div className="cart__details__item">Quantity</div>
+                            <div className="cart__details__item">Total</div>
                         </div>
                         <ul className="cart__list">
                             {
@@ -36,7 +47,9 @@ const Cart = () => {
                             }
                         </ul>
                     </div>
-                    <div className="cart__rt"></div>
+                    <div className="cart__rt">
+                        <div className="cart__rt__head">Summary</div>
+                    </div>
                 </div>
             }
         </>

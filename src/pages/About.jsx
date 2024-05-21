@@ -1,5 +1,6 @@
 import Footer from '../components/Footer';
 import ProfileClass from '../components/ProfileClass';
+import '../scss/pages/about.scss';
 
 const About = () => {
   return (

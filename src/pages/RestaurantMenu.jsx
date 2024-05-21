@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import Shimmer from "../Shimmer";
+import Shimmer from "../components/Shimmer";
 import { useParams } from "react-router-dom";
-import Footer from "../Footer";
-import useFetchResInfo from '../../utils/hooks/useFetchResInfo';
-import useFetchResCategories from "../../utils/hooks/useFetchResCategories";
-import { IMG_URL } from "../../utils/constants";
-import FoodNotFound from "../../../assets/images/dummyFood.jpg";
-import RestaurantCategory from "./RestaurantCategory";
-import '../../scss/pages/menu.scss';
+import Footer from "../components/Footer";
+import useFetchResInfo from '../utils/hooks/useFetchResInfo';
+import useFetchResCategories from "../utils/hooks/useFetchResCategories";
+import { IMG_URL } from "../utils/constants";
+import FoodNotFound from "../../assets/images/dummyFood.jpg";
+import RestaurantCategory from "../components/restaurant/RestaurantCategory";
+import '../scss/pages/menu.scss';
 
 const RestaurantMenu = () => {
 
@@ -18,11 +18,9 @@ const RestaurantMenu = () => {
     const [scrollUpArrow, setScrollUpArrow] = useState(false);
     const [isExpanded, setIsExpanded] = useState('cat-0');
 
-    useEffect = (() => {
+    useEffect(() => {
 
         const handleScroll = () => {
-
-            console.log('scrolling');
 
             if(window.scrollY > 100) {
                 setScrollUpArrow(true);
@@ -85,7 +83,9 @@ const RestaurantMenu = () => {
 
                 </div>
             </div>
-            <div className="menu__scrollUp" onClick={() => scrollUp()}></div>
+            {
+                scrollUpArrow && <div className="menu__scrollUp" onClick={() => scrollUp()}></div>
+            }
         </div>
 
         <Footer type="fixed"/>

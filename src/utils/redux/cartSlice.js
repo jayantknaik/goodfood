@@ -3,14 +3,37 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        items: []
+        items: [],
+        restaurants: [
+            {
+                key: "restaurants id",
+                value: {
+                    key: "item id",
+                    value: {
+                        id: "",
+                        name: "",
+                        desc: "",
+                        quantity: "",
+                        img: ""
+                    }
+                }
+            }
+        ]
     },
     reducers: {
         addItem: (state, action) => {
+
             state.items.push(action.payload);
+        
         },
-        removeItem: (state) => {
-            state.items.pop();
+        removeItem: (state, action) => {
+            
+            let index = state.items.findIndex(item => item.card.info.id === action.payload);
+
+            if (index !== -1) {
+                state.items.splice(index, 1);
+            }
+
         },
         clearCart: (state) => {
             state.items.length = 0;

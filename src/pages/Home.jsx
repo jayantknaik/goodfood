@@ -22,8 +22,11 @@ const Home = () => {
                 <div className="home__swiper">
                     {
                         resPromo.imageGridCards.info.map((promo) => {
+
+                            const {text} = promo.action;
+
                             return (
-                                <Link to={'/restaurants/'+promo.entityId} className="home__swiper__slide" key={promo.id}>
+                                <Link to={'/collection/' + text} className="home__swiper__slide" key={promo.id}>
                                     <img className="home__swiper__img" src={IMG_URL + promo.imageId} alt="swiper-img" />
                                 </Link>
                             )
