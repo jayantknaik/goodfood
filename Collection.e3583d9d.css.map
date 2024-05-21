@@ -1,0 +1,1 @@
+{"mappings":"","sources":["src/scss/pages/collection.scss"],"sourcesContent":["@use '../base/variables' as *;\r\n\r\n.collection {\r\n    \r\n}"],"names":[],"version":3,"file":"Collection.e3583d9d.css.map","sourceRoot":"/__parcel_source_root/"}

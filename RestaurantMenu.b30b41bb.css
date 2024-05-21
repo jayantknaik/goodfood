@@ -300,11 +300,15 @@
   background-color: #e8e8e8;
   border: none;
   border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   padding: 0 16px;
   font-size: 14px;
   font-weight: 600;
   line-height: 28px;
   transition: all .3s;
+  display: flex;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -314,6 +318,36 @@
 .menu__item__cta:hover {
   color: #fff;
   background-color: #303030;
+}
+
+.menu__item__cta.active {
+  min-width: 104px;
+}
+
+.menu__item__cta.active:hover {
+  color: #303030;
+  background-color: #e8e8e8;
+}
+
+.menu__item__del, .menu__item__add {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  display: flex;
+}
+
+.menu__item__del:hover, .menu__item__add:hover {
+  color: #fff;
+  background-color: #303030;
+}
+
+.menu__item__del {
+  line-height: 15px;
 }
 
 .menu__item__veg, .menu__item__nonVeg {
@@ -337,12 +371,29 @@
   translate: -50% -50%;
 }
 
+.menu__item__veg:after, .menu__item__nonVeg:after {
+  content: "";
+  background-color: #606060;
+  width: 1px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -10px;
+}
+
 .menu__item__nonVeg {
   border: 2px solid #d8232a;
 }
 
 .menu__item__nonVeg:before {
   background-color: #d8232a;
+}
+
+.menu__item__row {
+  align-items: center;
+  gap: 16px;
+  display: flex;
 }
 
 .menu__scrollUp {
@@ -353,7 +404,7 @@
   height: 52px;
   position: fixed;
   bottom: 64px;
-  right: 42px;
+  right: 32px;
   box-shadow: 0 4px 2.5rem #00000014;
 }
 
