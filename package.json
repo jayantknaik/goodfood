@@ -1,11 +1,11 @@
 {
-    "homepage": "https://jayantknaik.github.io/",
+    "homepage": "https://jayantknaik.github.io/GoodFood",
     "name": "good-food",
     "version": "1.0.0",
     "description": "React App",
     "scripts": {
         "start": "parcel index.html",
-        "build": "parcel build index.html",
+        "build": "parcel build index.html --public-url ./",
         "test": "jest",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"

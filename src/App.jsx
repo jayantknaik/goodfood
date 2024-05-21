@@ -66,7 +66,7 @@ const appRouter = createBrowserRouter([
         ],
         errorElement: <Error />
     }, 
-])
+], {basename: "/GoodFood"})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
