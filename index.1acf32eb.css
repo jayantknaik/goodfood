@@ -651,7 +651,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .cart__list {
   flex-direction: column;
   gap: 16px;
-  height: 400px;
+  height: 384px;
   padding: 0;
   display: flex;
   overflow: auto;
