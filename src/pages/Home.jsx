@@ -23,10 +23,23 @@ const Home = () => {
                     {
                         resPromo.imageGridCards.info.map((promo) => {
 
-                            const {text} = promo.action;
+                            const { link } = promo.action;
+                            const tempLink = new URLSearchParams(link);
+                            let collectionId, collectionTag, collectionType; 
+                            for (const key of tempLink.entries()) {
+                                if (key[0].includes("collection_id")) {
+                                    collectionId = key[1];
+                                }
+                                else if (key[0] === "tags") {
+                                    collectionTag = key[1];
+                                }
+                                else if (key[0] === "type") {
+                                    collectionType = key[1];
+                                }
+                            }
 
                             return (
-                                <Link to={'/collection/' + text} className="home__swiper__slide" key={promo.id}>
+                                <Link to={`/collection/${collectionId}/${collectionTag}/${collectionType}`} className="home__swiper__slide" key={promo.id}>
                                     <img className="home__swiper__img" src={IMG_URL + promo.imageId} alt="swiper-img" />
                                 </Link>
                             )

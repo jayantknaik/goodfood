@@ -10,12 +10,6 @@ const CartItem = ({data}) => {
     const [quantity, setQuantity] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
-    useEffect(() => {
-        cartItems.map((item) => {
-            
-        })
-    }, [])
-
     return (
         <li className="cart__item">
             <div className="cart__item__details">

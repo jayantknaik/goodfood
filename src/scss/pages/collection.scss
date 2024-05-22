@@ -1,5 +1,17 @@
 @use '../base/variables' as *;
 
 .collection {
-    
+    max-width: 1140px;
+    margin: 120px auto 0;
+    &__head {
+        font-size: 42px;
+        font-weight: $font-weight-semi-bold;
+        color: $gray-900;
+    }
+    &__desc {
+        font-size: $font-size-lg;
+        line-height: 22px;
+        font-weight: $font-weight-medium;
+        color: $gray-700;
+    }
 }
