@@ -13,7 +13,7 @@ const Collection = () => {
 
     console.log(collectionInfo);
 
-    return collectionData.length === undefined ? <Shimmer /> : (
+    return collectionInfo.length === undefined || collectionData.length === undefined ? <Shimmer /> : (
         <div className="collection">
             <div className="collection__head">{collectionInfo[0]?.card?.card?.title}</div>
             <div className="collection__desc">{collectionInfo[0]?.card?.card?.description}</div>
