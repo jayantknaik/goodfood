@@ -605,9 +605,83 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _collectionScss = require("../scss/pages/collection.scss");
+var _reactRouterDom = require("react-router-dom");
+var _useFetchResCollection = require("../utils/hooks/useFetchResCollection");
+var _useFetchResCollectionDefault = parcelHelpers.interopDefault(_useFetchResCollection);
+var _useFetchResCollectionInfo = require("../utils/hooks/useFetchResCollectionInfo");
+var _useFetchResCollectionInfoDefault = parcelHelpers.interopDefault(_useFetchResCollectionInfo);
+var _shimmer = require("../components/Shimmer");
+var _shimmerDefault = parcelHelpers.interopDefault(_shimmer);
+var _restaurantCard = require("../components/restaurant/RestaurantCard");
+var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _s = $RefreshSig$();
 const Collection = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false);
+    _s();
+    const { collectionId, collectionTag, collectionType } = (0, _reactRouterDom.useParams)();
+    const collectionData = (0, _useFetchResCollectionDefault.default)({
+        collectionId,
+        collectionTag,
+        collectionType
+    });
+    const collectionInfo = (0, _useFetchResCollectionInfoDefault.default)({
+        collectionId,
+        collectionTag,
+        collectionType
+    });
+    console.log(collectionInfo);
+    return collectionData.length === undefined ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+        fileName: "src/pages/Collection.jsx",
+        lineNumber: 16,
+        columnNumber: 50
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "collection",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "collection__head",
+                children: collectionInfo[0]?.card?.card?.title
+            }, void 0, false, {
+                fileName: "src/pages/Collection.jsx",
+                lineNumber: 18,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "collection__desc",
+                children: collectionInfo[0]?.card?.card?.description
+            }, void 0, false, {
+                fileName: "src/pages/Collection.jsx",
+                lineNumber: 19,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "collection__grid",
+                children: collectionData.map((item, index)=>{
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        resData: item.card.card
+                    }, index, false, {
+                        fileName: "src/pages/Collection.jsx",
+                        lineNumber: 24,
+                        columnNumber: 29
+                    }, undefined);
+                })
+            }, void 0, false, {
+                fileName: "src/pages/Collection.jsx",
+                lineNumber: 20,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/pages/Collection.jsx",
+        lineNumber: 17,
+        columnNumber: 9
+    }, undefined);
 };
+_s(Collection, "aQp9K421ILsZ68isH4wo8vS/Xdg=", false, function() {
+    return [
+        (0, _reactRouterDom.useParams),
+        (0, _useFetchResCollectionDefault.default),
+        (0, _useFetchResCollectionInfoDefault.default)
+    ];
+});
 _c = Collection;
 exports.default = Collection;
 var _c;
@@ -618,6 +692,70 @@ $RefreshReg$(_c, "Collection");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../scss/pages/collection.scss":"eBKx3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eBKx3":[function() {},{}]},["aY82G","1xC6H"], null, "parcelRequire028a")
+},{"react/jsx-dev-runtime":"iTorj","../scss/pages/collection.scss":"eBKx3","react-router-dom":"9xmpe","../utils/hooks/useFetchResCollection":"1SYF8","../components/Shimmer":"imnNo","../components/restaurant/RestaurantCard":"31655","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/hooks/useFetchResCollectionInfo":"bnu19"}],"eBKx3":[function() {},{}],"1SYF8":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ad8b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ad8b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useFetchResCollection = ({ collectionId, collectionTag, collectionType })=>{
+    _s();
+    const [resCollection, setResCollection] = (0, _react.useState)({});
+    (0, _react.useEffect)(()=>{
+        fetchResCollection();
+    }, []);
+    const fetchResCollection = async ()=>{
+        const data = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=${collectionId}&tags=${collectionTag}&sortBy=&filters=&type=${collectionType}&offset=0&page_type=null`);
+        const json = await data.json();
+        setResCollection(json?.data?.cards.filter((item)=>item?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"));
+    };
+    return resCollection;
+};
+_s(useFetchResCollection, "2wuWOxet7+DPvzZWyePVA7BUfAg=");
+exports.default = useFetchResCollection;
+
+  $parcel$ReactRefreshHelpers$ad8b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bnu19":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$18eb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$18eb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useFetchResCollectionInfo = ({ collectionId, collectionTag, collectionType })=>{
+    _s();
+    const [resCollection, setResCollection] = (0, _react.useState)({});
+    (0, _react.useEffect)(()=>{
+        fetchResCollection();
+    }, []);
+    const fetchResCollection = async ()=>{
+        const data = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=${collectionId}&tags=${collectionTag}&sortBy=&filters=&type=${collectionType}&offset=0&page_type=null`);
+        const json = await data.json();
+        setResCollection(json?.data?.cards);
+    };
+    return resCollection;
+};
+_s(useFetchResCollectionInfo, "2wuWOxet7+DPvzZWyePVA7BUfAg=");
+exports.default = useFetchResCollectionInfo;
+
+  $parcel$ReactRefreshHelpers$18eb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["aY82G","1xC6H"], null, "parcelRequire028a")
 
 //# sourceMappingURL=Collection.f1b43057.js.map

@@ -1,3 +1,30 @@
+.collection {
+  max-width: 1140px;
+  margin: 120px auto 0;
+}
 
+.collection__head {
+  color: #303030;
+  height: 64px;
+  padding: 0 0 8px;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 64px;
+}
+
+.collection__desc {
+  color: #606060;
+  height: 54px;
+  padding: 0 0 32px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.collection__grid {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  display: grid;
+}
 
 /*# sourceMappingURL=Collection.e3583d9d.css.map */

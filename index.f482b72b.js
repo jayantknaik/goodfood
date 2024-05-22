@@ -3082,7 +3082,7 @@ const appRouter = (0, _reactRouterDom.createBrowserRouter)([
                 }, undefined)
             },
             {
-                path: "/collection/:collectionId",
+                path: "/collection/:collectionId/:collectionTag/:collectionType",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Collection, {}, void 0, false, {
@@ -3124,7 +3124,7 @@ $RefreshReg$(_c2, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Header":"knC38","./pages/Home":"aufND","./pages/About":"4kNDP","./pages/Contact":"6zcTc","./components/Error":"cKXa2","./pages/Login":"cxOQb","./utils/hooks/useFetchResList":"bpbsl","./components/Shimmer":"imnNo","react-redux":"62sf7","./utils/redux/store":"129uB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./pages/Cart":"6ZZCa","2f707d3b301d2a4d":"aH03X","693caaa374ae93b8":"k7SVK"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./components/Header":"knC38","./pages/Home":"aufND","./pages/About":"4kNDP","./pages/Contact":"6zcTc","./components/Error":"cKXa2","./pages/Login":"cxOQb","./utils/hooks/useFetchResList":"bpbsl","./components/Shimmer":"imnNo","2f707d3b301d2a4d":"aH03X","react-redux":"62sf7","./utils/redux/store":"129uB","./pages/Cart":"6ZZCa","693caaa374ae93b8":"k7SVK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -35195,9 +35195,16 @@ const Home = ()=>{
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "home__swiper",
                     children: resPromo.imageGridCards.info.map((promo)=>{
-                        const { text } = promo.action;
+                        const { link } = promo.action;
+                        const tempLink = new URLSearchParams(link);
+                        let collectionId, collectionTag, collectionType;
+                        for (const key of tempLink.entries()){
+                            if (key[0].includes("collection_id")) collectionId = key[1];
+                            else if (key[0] === "tags") collectionTag = key[1];
+                            else if (key[0] === "type") collectionType = key[1];
+                        }
                         return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                            to: "/collection/" + text,
+                            to: `/collection/${collectionId}/${collectionTag}/${collectionType}`,
                             className: "home__swiper__slide",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: "home__swiper__img",
@@ -35205,12 +35212,12 @@ const Home = ()=>{
                                 alt: "swiper-img"
                             }, void 0, false, {
                                 fileName: "src/pages/Home.jsx",
-                                lineNumber: 30,
+                                lineNumber: 43,
                                 columnNumber: 37
                             }, undefined)
                         }, promo.id, false, {
                             fileName: "src/pages/Home.jsx",
-                            lineNumber: 29,
+                            lineNumber: 42,
                             columnNumber: 33
                         }, undefined);
                     })
@@ -35229,7 +35236,7 @@ const Home = ()=>{
                 children: "Top restaurant chains in Bangalore"
             }, void 0, false, {
                 fileName: "src/pages/Home.jsx",
-                lineNumber: 37,
+                lineNumber: 50,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35240,19 +35247,19 @@ const Home = ()=>{
                         resData: res
                     }, res.info.id, false, {
                         fileName: "src/pages/Home.jsx",
-                        lineNumber: 42,
+                        lineNumber: 55,
                         columnNumber: 53
                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
                         resData: res
                     }, res.info.id, false, {
                         fileName: "src/pages/Home.jsx",
-                        lineNumber: 42,
+                        lineNumber: 55,
                         columnNumber: 109
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/pages/Home.jsx",
-                lineNumber: 38,
+                lineNumber: 51,
                 columnNumber: 13
             }, undefined)
         ]
@@ -35278,144 +35285,7 @@ $RefreshReg$(_c, "Home");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../components/Shimmer":"imnNo","../utils/hooks/useFetchResPromo":"iylo0","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../components/restaurant/RestaurantCard":"31655","../scss/pages/home.scss":"fKBd6"}],"imnNo":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0b57 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0b57.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _shimmerScss = require("../scss/pages/shimmer.scss");
-var _s = $RefreshSig$();
-const Shimmer = ()=>{
-    _s();
-    (0, _react.useEffect)(()=>{
-        window.scrollTo(0, 0);
-    });
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "shimmer",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer__intro"
-            }, void 0, false, {
-                fileName: "src/components/Shimmer.jsx",
-                lineNumber: 11,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer__title"
-            }, void 0, false, {
-                fileName: "src/components/Shimmer.jsx",
-                lineNumber: 12,
-                columnNumber: 13
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer__swiper",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "shimmer__slide"
-                    }, void 0, false, {
-                        fileName: "src/components/Shimmer.jsx",
-                        lineNumber: 14,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "shimmer__slide"
-                    }, void 0, false, {
-                        fileName: "src/components/Shimmer.jsx",
-                        lineNumber: 15,
-                        columnNumber: 17
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "shimmer__slide"
-                    }, void 0, false, {
-                        fileName: "src/components/Shimmer.jsx",
-                        lineNumber: 16,
-                        columnNumber: 17
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Shimmer.jsx",
-                lineNumber: 13,
-                columnNumber: 13
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Shimmer.jsx",
-        lineNumber: 10,
-        columnNumber: 9
-    }, undefined);
-};
-_s(Shimmer, "OD7bBpZva5O2jO+Puf00hKivP7c=");
-_c = Shimmer;
-exports.default = Shimmer;
-var _c;
-$RefreshReg$(_c, "Shimmer");
-
-  $parcel$ReactRefreshHelpers$0b57.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../scss/pages/shimmer.scss":"aN8DJ"}],"aN8DJ":[function() {},{}],"iylo0":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6bb3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6bb3.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _constants = require("../constants");
-var _s = $RefreshSig$();
-const useFetchResPromo = (resId)=>{
-    _s();
-    const [resPromo, setResPromo] = (0, _react.useState)(null);
-    (0, _react.useEffect)(()=>{
-        fetchResPromo();
-    }, []);
-    const fetchResPromo = async ()=>{
-        const data = await fetch((0, _constants.RESTAURANTS_URL) + resId);
-        const json = await data.json();
-        setResPromo(json?.data?.cards[0]?.card?.card);
-    };
-    return resPromo;
-};
-_s(useFetchResPromo, "vh6XXf2va0+2lCNVFkNd6wNfHJY=");
-exports.default = useFetchResPromo;
-
-  $parcel$ReactRefreshHelpers$6bb3.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","../constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hB8jg":[function(require,module,exports) {
-// Base
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "IMG_URL", ()=>IMG_URL);
-parcelHelpers.export(exports, "RESTAURANTS_URL", ()=>RESTAURANTS_URL);
-parcelHelpers.export(exports, "MENU_URL", ()=>MENU_URL);
-parcelHelpers.export(exports, "TEA_DAY", ()=>TEA_DAY);
-parcelHelpers.export(exports, "BIRYANI", ()=>BIRYANI);
-parcelHelpers.export(exports, "SOUTH_INDIAN", ()=>SOUTH_INDIAN);
-parcelHelpers.export(exports, "PIZZA", ()=>PIZZA);
-parcelHelpers.export(exports, "NOTH_INDIAN", ()=>NOTH_INDIAN);
-const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-const RESTAURANTS_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.049488749064965&lng=77.61902712285519&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-const MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.922464&lng=81.794091&restaurantId=";
-const TEA_DAY = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.049488749064965&lng=77.61902712285519&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-const BIRYANI = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83649&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
-const SOUTH_INDIAN = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83646&tags=layout_CCS_SouthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
-const PIZZA = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83644&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
-const NOTH_INDIAN = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83645&tags=layout_CCS_NorthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"31655":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../components/restaurant/RestaurantCard":"31655","../components/Shimmer":"imnNo","../utils/hooks/useFetchResPromo":"iylo0","../utils/constants":"hB8jg","../scss/pages/home.scss":"fKBd6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"31655":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b50a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35548,7 +35418,144 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fKBd6":[function() {},{}],"4kNDP":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hB8jg":[function(require,module,exports) {
+// Base
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IMG_URL", ()=>IMG_URL);
+parcelHelpers.export(exports, "RESTAURANTS_URL", ()=>RESTAURANTS_URL);
+parcelHelpers.export(exports, "MENU_URL", ()=>MENU_URL);
+parcelHelpers.export(exports, "TEA_DAY", ()=>TEA_DAY);
+parcelHelpers.export(exports, "BIRYANI", ()=>BIRYANI);
+parcelHelpers.export(exports, "SOUTH_INDIAN", ()=>SOUTH_INDIAN);
+parcelHelpers.export(exports, "PIZZA", ()=>PIZZA);
+parcelHelpers.export(exports, "NOTH_INDIAN", ()=>NOTH_INDIAN);
+const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+const RESTAURANTS_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.049488749064965&lng=77.61902712285519&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+const MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.922464&lng=81.794091&restaurantId=";
+const TEA_DAY = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.049488749064965&lng=77.61902712285519&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+const BIRYANI = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83649&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
+const SOUTH_INDIAN = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83646&tags=layout_CCS_SouthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
+const PIZZA = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83644&tags=layout_CCS_Pizza&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
+const NOTH_INDIAN = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0825943&lng=80.2707234&collection=83645&tags=layout_CCS_NorthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"imnNo":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0b57 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0b57.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _shimmerScss = require("../scss/pages/shimmer.scss");
+var _s = $RefreshSig$();
+const Shimmer = ()=>{
+    _s();
+    (0, _react.useEffect)(()=>{
+        window.scrollTo(0, 0);
+    });
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "shimmer",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer__intro"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.jsx",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer__title"
+            }, void 0, false, {
+                fileName: "src/components/Shimmer.jsx",
+                lineNumber: 12,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer__swiper",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "shimmer__slide"
+                    }, void 0, false, {
+                        fileName: "src/components/Shimmer.jsx",
+                        lineNumber: 14,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "shimmer__slide"
+                    }, void 0, false, {
+                        fileName: "src/components/Shimmer.jsx",
+                        lineNumber: 15,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "shimmer__slide"
+                    }, void 0, false, {
+                        fileName: "src/components/Shimmer.jsx",
+                        lineNumber: 16,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Shimmer.jsx",
+                lineNumber: 13,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Shimmer.jsx",
+        lineNumber: 10,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Shimmer, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c = Shimmer;
+exports.default = Shimmer;
+var _c;
+$RefreshReg$(_c, "Shimmer");
+
+  $parcel$ReactRefreshHelpers$0b57.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../scss/pages/shimmer.scss":"aN8DJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aN8DJ":[function() {},{}],"iylo0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6bb3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6bb3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _constants = require("../constants");
+var _s = $RefreshSig$();
+const useFetchResPromo = (resId)=>{
+    _s();
+    const [resPromo, setResPromo] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetchResPromo();
+    }, []);
+    const fetchResPromo = async ()=>{
+        const data = await fetch((0, _constants.RESTAURANTS_URL) + resId);
+        const json = await data.json();
+        setResPromo(json?.data?.cards[0]?.card?.card);
+    };
+    return resPromo;
+};
+_s(useFetchResPromo, "vh6XXf2va0+2lCNVFkNd6wNfHJY=");
+exports.default = useFetchResPromo;
+
+  $parcel$ReactRefreshHelpers$6bb3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fKBd6":[function() {},{}],"4kNDP":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b1ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35627,7 +35634,7 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../components/Footer":"2OVeV","../components/ProfileClass":"72CRz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../scss/pages/about.scss":"d3uxl"}],"2OVeV":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../components/Footer":"2OVeV","../components/ProfileClass":"72CRz","../scss/pages/about.scss":"d3uxl","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2OVeV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$66c2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40925,7 +40932,145 @@ exports.default = useFetchResList;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"129uB":[function(require,module,exports) {
+},{"react":"21dqq","../constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aH03X":[function(require,module,exports) {
+module.exports = Promise.all([
+    require("17ca7c0c4f89994c")(require("a6e5774b4c489bf8").getBundleURL("kFIdX") + "RestaurantMenu.b30b41bb.css" + "?" + Date.now()).catch((err)=>{
+        delete module.bundle.cache[module.id];
+        throw err;
+    }),
+    require("a9ee106290aaa890")(require("a6e5774b4c489bf8").getBundleURL("kFIdX") + "RestaurantMenu.e776f02c.js" + "?" + Date.now()).catch((err)=>{
+        delete module.bundle.cache[module.id];
+        throw err;
+    })
+]).then(()=>module.bundle.root("3IzyK"));
+
+},{"17ca7c0c4f89994c":"1MWPE","a6e5774b4c489bf8":"lgJ39","a9ee106290aaa890":"61B45"}],"1MWPE":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ae7c5e215a4907e2");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same link element twice (e.g. if it was already in the HTML)
+        var existingLinks = document.getElementsByTagName("link");
+        if ([].concat(existingLinks).some(function isCurrentBundle(link) {
+            return link.href === bundle && link.rel.indexOf("stylesheet") > -1;
+        })) {
+            resolve();
+            return;
+        }
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = bundle;
+        link.onerror = function(e) {
+            link.onerror = link.onload = null;
+            link.remove();
+            reject(e);
+        };
+        link.onload = function() {
+            link.onerror = link.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(link);
+    });
+});
+
+},{"ae7c5e215a4907e2":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("ca2a84f7fa4a3bb0");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"129uB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _toolkit = require("@reduxjs/toolkit");
@@ -45089,7 +45234,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","../components/cart/CartItem":"7Scoa","../components/cart/CartEmpty":"jmHZg","../scss/pages/cart.scss":"hNGjm","../utils/redux/cartSlice":"goXg1","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"7Scoa":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"62sf7","../components/cart/CartItem":"7Scoa","../components/cart/CartEmpty":"jmHZg","../scss/pages/cart.scss":"hNGjm","../utils/redux/cartSlice":"goXg1","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7Scoa":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$45e6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45111,9 +45256,6 @@ const CartItem = ({ data })=>{
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     const [quantity, setQuantity] = (0, _react.useState)(0);
     const [totalPrice, setTotalPrice] = (0, _react.useState)(0);
-    (0, _react.useEffect)(()=>{
-        cartItems.map((item)=>{});
-    }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
         className: "cart__item",
         children: [
@@ -45129,12 +45271,12 @@ const CartItem = ({ data })=>{
                             alt: "food-image"
                         }, void 0, false, {
                             fileName: "src/components/cart/CartItem.jsx",
-                            lineNumber: 23,
+                            lineNumber: 17,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 22,
+                        lineNumber: 16,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45145,7 +45287,7 @@ const CartItem = ({ data })=>{
                                 children: name
                             }, void 0, false, {
                                 fileName: "src/components/cart/CartItem.jsx",
-                                lineNumber: 26,
+                                lineNumber: 20,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45153,19 +45295,19 @@ const CartItem = ({ data })=>{
                                 children: description
                             }, void 0, false, {
                                 fileName: "src/components/cart/CartItem.jsx",
-                                lineNumber: 27,
+                                lineNumber: 21,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 25,
+                        lineNumber: 19,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 21,
+                lineNumber: 15,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45176,14 +45318,14 @@ const CartItem = ({ data })=>{
                         children: "₹"
                     }, void 0, false, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 30,
+                        lineNumber: 24,
                         columnNumber: 46
                     }, undefined),
                     price ? Math.round(price / 100) : Math.round(defaultPrice / 100)
                 ]
             }, void 0, true, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 30,
+                lineNumber: 24,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45191,7 +45333,7 @@ const CartItem = ({ data })=>{
                 children: quantity
             }, void 0, false, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 31,
+                lineNumber: 25,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45202,24 +45344,24 @@ const CartItem = ({ data })=>{
                         children: "₹"
                     }, void 0, false, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 32,
+                        lineNumber: 26,
                         columnNumber: 46
                     }, undefined),
                     totalPrice
                 ]
             }, void 0, true, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 32,
+                lineNumber: 26,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/cart/CartItem.jsx",
-        lineNumber: 20,
+        lineNumber: 14,
         columnNumber: 9
     }, undefined);
 };
-_s(CartItem, "MkLM4eWyqNggC8vaK69hKhSPD2M=", false, function() {
+_s(CartItem, "D5n+KtXBddi3GHoGw7SOrCCSDBI=", false, function() {
     return [
         (0, _reactRedux.useSelector)
     ];
@@ -45234,45 +45376,10 @@ $RefreshReg$(_c, "CartItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"8VdUL","react-redux":"62sf7","react":"21dqq"}],"8VdUL":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"8VdUL","react-redux":"62sf7","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8VdUL":[function(require,module,exports) {
 module.exports = require("17d57bd7e2c6aa8f").getBundleURL("kFIdX") + "dummyFood.adc1ba3b.jpg" + "?" + Date.now();
 
-},{"17d57bd7e2c6aa8f":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"jmHZg":[function(require,module,exports) {
+},{"17d57bd7e2c6aa8f":"lgJ39"}],"jmHZg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6155 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -45335,110 +45442,7 @@ $RefreshReg$(_c, "CartEmpty");
 },{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../../../assets/images/emptyCart.png":"6EJc7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6EJc7":[function(require,module,exports) {
 module.exports = require("fafbeb4afd09fde6").getBundleURL("kFIdX") + "emptyCart.da444c32.png" + "?" + Date.now();
 
-},{"fafbeb4afd09fde6":"lgJ39"}],"hNGjm":[function() {},{}],"aH03X":[function(require,module,exports) {
-module.exports = Promise.all([
-    require("17ca7c0c4f89994c")(require("a6e5774b4c489bf8").getBundleURL("kFIdX") + "RestaurantMenu.b30b41bb.css" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    }),
-    require("a9ee106290aaa890")(require("a6e5774b4c489bf8").getBundleURL("kFIdX") + "RestaurantMenu.e776f02c.js" + "?" + Date.now()).catch((err)=>{
-        delete module.bundle.cache[module.id];
-        throw err;
-    })
-]).then(()=>module.bundle.root("3IzyK"));
-
-},{"17ca7c0c4f89994c":"1MWPE","a6e5774b4c489bf8":"lgJ39","a9ee106290aaa890":"61B45"}],"1MWPE":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ae7c5e215a4907e2");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same link element twice (e.g. if it was already in the HTML)
-        var existingLinks = document.getElementsByTagName("link");
-        if ([].concat(existingLinks).some(function isCurrentBundle(link) {
-            return link.href === bundle && link.rel.indexOf("stylesheet") > -1;
-        })) {
-            resolve();
-            return;
-        }
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = bundle;
-        link.onerror = function(e) {
-            link.onerror = link.onload = null;
-            link.remove();
-            reject(e);
-        };
-        link.onload = function() {
-            link.onerror = link.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(link);
-    });
-});
-
-},{"ae7c5e215a4907e2":"j49pS"}],"j49pS":[function(require,module,exports) {
-"use strict";
-var cachedBundles = {};
-var cachedPreloads = {};
-var cachedPrefetches = {};
-function getCache(type) {
-    switch(type){
-        case "preload":
-            return cachedPreloads;
-        case "prefetch":
-            return cachedPrefetches;
-        default:
-            return cachedBundles;
-    }
-}
-module.exports = function(loader, type) {
-    return function(bundle) {
-        var cache = getCache(type);
-        if (cache[bundle]) return cache[bundle];
-        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
-            delete cache[bundle];
-            throw e;
-        });
-    };
-};
-
-},{}],"61B45":[function(require,module,exports) {
-"use strict";
-var cacheLoader = require("ca2a84f7fa4a3bb0");
-module.exports = cacheLoader(function(bundle) {
-    return new Promise(function(resolve, reject) {
-        // Don't insert the same script twice (e.g. if it was already in the HTML)
-        var existingScripts = document.getElementsByTagName("script");
-        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
-            return script.src === bundle;
-        })) {
-            resolve();
-            return;
-        }
-        var preloadLink = document.createElement("link");
-        preloadLink.href = bundle;
-        preloadLink.rel = "preload";
-        preloadLink.as = "script";
-        document.head.appendChild(preloadLink);
-        var script = document.createElement("script");
-        script.async = true;
-        script.type = "text/javascript";
-        script.src = bundle;
-        script.onerror = function(e) {
-            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
-            script.onerror = script.onload = null;
-            script.remove();
-            reject(error);
-        };
-        script.onload = function() {
-            script.onerror = script.onload = null;
-            resolve();
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-    });
-});
-
-},{"ca2a84f7fa4a3bb0":"j49pS"}],"k7SVK":[function(require,module,exports) {
+},{"fafbeb4afd09fde6":"lgJ39"}],"hNGjm":[function() {},{}],"k7SVK":[function(require,module,exports) {
 module.exports = Promise.all([
     require("3ae4d9859c31b5d3")(require("a666d8195b71e58f").getBundleURL("kFIdX") + "Collection.e3583d9d.css" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];
