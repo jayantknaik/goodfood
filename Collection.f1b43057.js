@@ -629,10 +629,10 @@ const Collection = ()=>{
         collectionType
     });
     console.log(collectionInfo);
-    return collectionData.length === undefined ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    return collectionInfo.length === undefined || collectionData.length === undefined ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/pages/Collection.jsx",
         lineNumber: 16,
-        columnNumber: 50
+        columnNumber: 89
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "collection",
         children: [
