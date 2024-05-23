@@ -9,7 +9,7 @@ const Search = ({resList}) => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     const updateInput = (e) => {
-        currText = e.target.value;
+        let currText = e.target.value;
         setSearchText(currText);
         currText.length > 0 ? searchDD.current.classList.add('show') : searchDD.current.classList.remove('show');
         setFilteredRestaurants(resList.filter((res) => res.info.name.toLowerCase().includes(currText.toLowerCase())));

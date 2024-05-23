@@ -6,9 +6,9 @@ const cartSlice = createSlice({
         items: [],
         restaurants: [
             {
-                key: "restaurants id",
+                key: "Restaurant's ID",
                 value: {
-                    key: "item id",
+                    key: "Item ID",
                     value: {
                         id: "",
                         name: "",
@@ -24,6 +24,7 @@ const cartSlice = createSlice({
         addItem: (state, action) => {
 
             state.items.push(action.payload);
+            console.log(action.payload);
             // state.restaurants.push(action.payload);
 
         },
