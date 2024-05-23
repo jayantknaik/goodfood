@@ -692,7 +692,7 @@ $RefreshReg$(_c, "Collection");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../scss/pages/collection.scss":"eBKx3","react-router-dom":"9xmpe","../utils/hooks/useFetchResCollection":"1SYF8","../components/Shimmer":"imnNo","../components/restaurant/RestaurantCard":"31655","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/hooks/useFetchResCollectionInfo":"bnu19"}],"eBKx3":[function() {},{}],"1SYF8":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../scss/pages/collection.scss":"eBKx3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe","../utils/hooks/useFetchResCollection":"1SYF8","../components/Shimmer":"imnNo","../components/restaurant/RestaurantCard":"31655","../utils/hooks/useFetchResCollectionInfo":"bnu19"}],"eBKx3":[function() {},{}],"1SYF8":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad8b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
