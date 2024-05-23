@@ -88,7 +88,7 @@ const RestaurantMenu = () => {
             }
         </div>
 
-        <Footer type="fixed"/>
+        <Footer />
         
     </>
 }
