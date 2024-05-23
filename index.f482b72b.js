@@ -34900,7 +34900,7 @@ const Search = ({ resList })=>{
     const [searchText, setSearchText] = (0, _react.useState)("");
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     const updateInput = (e)=>{
-        currText = e.target.value;
+        let currText = e.target.value;
         setSearchText(currText);
         currText.length > 0 ? searchDD.current.classList.add("show") : searchDD.current.classList.remove("show");
         setFilteredRestaurants(resList.filter((res)=>res.info.name.toLowerCase().includes(currText.toLowerCase())));
@@ -44899,9 +44899,9 @@ const cartSlice = (0, _toolkit.createSlice)({
         items: [],
         restaurants: [
             {
-                key: "restaurants id",
+                key: "Restaurant's ID",
                 value: {
-                    key: "item id",
+                    key: "Item ID",
                     value: {
                         id: "",
                         name: "",
@@ -44916,6 +44916,7 @@ const cartSlice = (0, _toolkit.createSlice)({
     reducers: {
         addItem: (state, action)=>{
             state.items.push(action.payload);
+            console.log(action.payload);
         // state.restaurants.push(action.payload);
         },
         removeItem: (state, action)=>{
