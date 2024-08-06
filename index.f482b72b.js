@@ -35446,6 +35446,8 @@ parcelHelpers.export(exports, "isVeg", ()=>isVeg);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../../utils/constants");
 var _reactRouterDom = require("react-router-dom");
+var _dummyFoodJpg = require("../../../assets/images/dummyFood.jpg");
+var _dummyFoodJpgDefault = parcelHelpers.interopDefault(_dummyFoodJpg);
 const RestaurantCard = ({ resData })=>{
     const { id, name, avgRating, cuisines, costForTwo, cloudinaryImageId, sla } = resData.info;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35455,10 +35457,11 @@ const RestaurantCard = ({ resData })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                 className: "res-card__img",
                 src: (0, _constants.IMG_URL) + cloudinaryImageId,
+                onError: (e)=>e.target.src = (0, _dummyFoodJpgDefault.default),
                 alt: "res-image"
             }, void 0, false, {
                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35472,7 +35475,7 @@ const RestaurantCard = ({ resData })=>{
                                 children: name
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                                lineNumber: 13,
+                                lineNumber: 14,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35480,13 +35483,13 @@ const RestaurantCard = ({ resData })=>{
                                 children: avgRating
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                                lineNumber: 14,
+                                lineNumber: 15,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/restaurant/RestaurantCard.jsx",
-                        lineNumber: 12,
+                        lineNumber: 13,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35497,7 +35500,7 @@ const RestaurantCard = ({ resData })=>{
                                 children: cuisines.join(", ")
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                                lineNumber: 17,
+                                lineNumber: 18,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35505,13 +35508,13 @@ const RestaurantCard = ({ resData })=>{
                                 children: costForTwo
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                                lineNumber: 18,
+                                lineNumber: 19,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/restaurant/RestaurantCard.jsx",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35522,19 +35525,19 @@ const RestaurantCard = ({ resData })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/components/restaurant/RestaurantCard.jsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/restaurant/RestaurantCard.jsx",
-        lineNumber: 9,
+        lineNumber: 10,
         columnNumber: 9
     }, undefined);
 };
@@ -35547,12 +35550,12 @@ const isVeg = (RestaurantCard)=>{
                 ...props
             }, void 0, false, {
                 fileName: "src/components/restaurant/RestaurantCard.jsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 17
             }, undefined)
         }, void 0, false, {
             fileName: "src/components/restaurant/RestaurantCard.jsx",
-            lineNumber: 29,
+            lineNumber: 30,
             columnNumber: 13
         }, undefined);
     };
@@ -35566,7 +35569,45 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fKBd6":[function() {},{}],"2OVeV":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../../assets/images/dummyFood.jpg":"8VdUL"}],"8VdUL":[function(require,module,exports) {
+module.exports = require("17d57bd7e2c6aa8f").getBundleURL("kFIdX") + "dummyFood.adc1ba3b.jpg" + "?" + Date.now();
+
+},{"17d57bd7e2c6aa8f":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"fKBd6":[function() {},{}],"2OVeV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$66c2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44896,32 +44937,25 @@ var _toolkit = require("@reduxjs/toolkit");
 const cartSlice = (0, _toolkit.createSlice)({
     name: "cart",
     initialState: {
-        items: [],
-        restaurants: [
-            {
-                key: "Restaurant's ID",
-                value: {
-                    key: "Item ID",
-                    value: {
-                        id: "",
-                        name: "",
-                        desc: "",
-                        quantity: "",
-                        img: ""
-                    }
-                }
-            }
-        ]
+        items: []
     },
     reducers: {
         addItem: (state, action)=>{
-            state.items.push(action.payload);
-            console.log(action.payload);
-        // state.restaurants.push(action.payload);
+            let index = state.items.findIndex((item)=>item.value.id === action.payload.value.id);
+            let payload1 = action.payload;
+            if (index !== -1) state.items[index].quantity = state.items[index].quantity + 1;
+            else {
+                payload1.quantity = 1;
+                state.items.push(payload1);
+            }
         },
         removeItem: (state, action)=>{
-            let index = state.items.findIndex((item)=>item.card.info.id === action.payload);
-            if (index !== -1) state.items.splice(index, 1);
+            let index = state.items.findIndex((item)=>item.value.id === action.payload);
+            if (index !== -1) state.items[index].quantity = state.items[index].quantity - 1;
+            else {
+                payload.quantity = 0;
+                state.items.splice(index, 1);
+            }
         },
         clearCart: (state)=>{
             state.items.length = 0;
@@ -45050,12 +45084,11 @@ const Cart = ()=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                             className: "cart__list",
                             children: cartItems.map((item, index)=>{
-                                const { id } = item.card.info;
                                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
                                     data: item
                                 }, index, false, {
                                     fileName: "src/pages/Cart.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 43,
                                     columnNumber: 41
                                 }, undefined);
                             })
@@ -45077,12 +45110,12 @@ const Cart = ()=>{
                         children: "Summary"
                     }, void 0, false, {
                         fileName: "src/pages/Cart.jsx",
-                        lineNumber: 51,
+                        lineNumber: 50,
                         columnNumber: 25
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/Cart.jsx",
-                    lineNumber: 50,
+                    lineNumber: 49,
                     columnNumber: 21
                 }, undefined)
             ]
@@ -45124,15 +45157,14 @@ var _dummyFoodJpg = require("../../../assets/images/dummyFood.jpg");
 var _dummyFoodJpgDefault = parcelHelpers.interopDefault(_dummyFoodJpg);
 var _reactRedux = require("react-redux");
 var _react = require("react");
-var _s = $RefreshSig$();
 const CartItem = ({ data })=>{
-    _s();
-    const { id, name, description, imageId, price, defaultPrice, itemAttribute } = data.card.info;
-    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
-    const [quantity, setQuantity] = (0, _react.useState)(0);
-    const [totalPrice, setTotalPrice] = (0, _react.useState)(0);
+    console.log(data);
+    const { quantity } = data;
+    const { id, name, description, imageId, price, defaultPrice, itemAttribute } = data?.value;
+    const pricePerItem = price ? Math.round(price / 100) : Math.round(defaultPrice / 100);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
         className: "cart__item",
+        id: id,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "cart__item__details",
@@ -45146,12 +45178,12 @@ const CartItem = ({ data })=>{
                             alt: "food-image"
                         }, void 0, false, {
                             fileName: "src/components/cart/CartItem.jsx",
-                            lineNumber: 17,
+                            lineNumber: 18,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45162,7 +45194,7 @@ const CartItem = ({ data })=>{
                                 children: name
                             }, void 0, false, {
                                 fileName: "src/components/cart/CartItem.jsx",
-                                lineNumber: 20,
+                                lineNumber: 21,
                                 columnNumber: 21
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45170,19 +45202,19 @@ const CartItem = ({ data })=>{
                                 children: description
                             }, void 0, false, {
                                 fileName: "src/components/cart/CartItem.jsx",
-                                lineNumber: 21,
+                                lineNumber: 22,
                                 columnNumber: 21
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 19,
+                        lineNumber: 20,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45193,14 +45225,14 @@ const CartItem = ({ data })=>{
                         children: "₹"
                     }, void 0, false, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 46
                     }, undefined),
-                    price ? Math.round(price / 100) : Math.round(defaultPrice / 100)
+                    pricePerItem
                 ]
             }, void 0, true, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45208,7 +45240,7 @@ const CartItem = ({ data })=>{
                 children: quantity
             }, void 0, false, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 25,
+                lineNumber: 26,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -45219,28 +45251,23 @@ const CartItem = ({ data })=>{
                         children: "₹"
                     }, void 0, false, {
                         fileName: "src/components/cart/CartItem.jsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 46
                     }, undefined),
-                    totalPrice
+                    pricePerItem * quantity
                 ]
             }, void 0, true, {
                 fileName: "src/components/cart/CartItem.jsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/cart/CartItem.jsx",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 9
     }, undefined);
 };
-_s(CartItem, "D5n+KtXBddi3GHoGw7SOrCCSDBI=", false, function() {
-    return [
-        (0, _reactRedux.useSelector)
-    ];
-});
 _c = CartItem;
 exports.default = CartItem;
 var _c;
@@ -45251,45 +45278,7 @@ $RefreshReg$(_c, "CartItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"8VdUL","react-redux":"62sf7","react":"21dqq"}],"8VdUL":[function(require,module,exports) {
-module.exports = require("17d57bd7e2c6aa8f").getBundleURL("kFIdX") + "dummyFood.adc1ba3b.jpg" + "?" + Date.now();
-
-},{"17d57bd7e2c6aa8f":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"jmHZg":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"8VdUL","react-redux":"62sf7","react":"21dqq"}],"jmHZg":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6155 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

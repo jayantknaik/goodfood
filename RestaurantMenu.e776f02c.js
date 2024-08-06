@@ -937,6 +937,9 @@ const RestaurantCategory = ({ id, title, itemCards, isExpanded, toggleCategory }
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "menu__head",
+                onClick: ()=>toggleCategory({
+                        id: id
+                    }),
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "menu__head__text",
@@ -947,10 +950,7 @@ const RestaurantCategory = ({ id, title, itemCards, isExpanded, toggleCategory }
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: `menu__head__arrow ${isExpanded === id ? "expand" : ""} `,
-                        onClick: ()=>toggleCategory({
-                                id: id
-                            })
+                        className: `menu__head__arrow ${isExpanded === id ? "expand" : ""} `
                     }, void 0, false, {
                         fileName: "src/components/restaurant/RestaurantCategory.jsx",
                         lineNumber: 22,
@@ -1018,35 +1018,35 @@ var _dummyFoodJpg = require("../../../assets/images/dummyFood.jpg");
 var _dummyFoodJpgDefault = parcelHelpers.interopDefault(_dummyFoodJpg);
 var _react = require("react");
 var _reactRedux = require("react-redux");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
     _s();
+    const { resId } = (0, _reactRouterDom.useParams)();
     const { id, name, description, imageId, price, defaultPrice, itemAttribute } = data.card.info;
     const [quantity, setQuantity] = (0, _react.useState)(0);
-    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const cartItems = (0, _react.useState)((0, _reactRedux.useSelector)((store)=>store.cart.items));
     (0, _react.useEffect)(()=>{
         let count = 0;
         cartItems.map((item)=>{
-            if (item.card.info.id === id) count++;
+            if (item?.value?.card?.info?.id === id) count++;
         });
         setQuantity(count);
     }, []);
-    (0, _react.useEffect)(()=>{
-        console.log(cartItems);
-    }, [
-        cartItems
-    ]);
     const addItem = ()=>{
-        addFoodItem(data);
+        const { id, imageId, name, price, description } = data?.card?.info;
+        addFoodItem({
+            resId,
+            value: {
+                "id": id,
+                "imageId": imageId,
+                "name": name,
+                "price": price,
+                "defaultPrice": defaultPrice,
+                "description": description
+            }
+        });
         setQuantity(quantity + 1);
-    // if( quantity >= 1 ) {
-    //     let index = cartItems.findIndex(item => item.card.info.id === id);
-    //     if (index !== -1) {
-    //         cartItems[index].card.info.quantity = quantity;
-    //     }
-    // }
-    // else {
-    // }
     };
     const removeItem = ()=>{
         removeFoodItem(id);
@@ -1067,26 +1067,26 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                                 children: name
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                                lineNumber: 54,
+                                lineNumber: 55,
                                 columnNumber: 21
                             }, undefined),
                             itemAttribute.vegClassifier === "VEG" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "menu__item__veg"
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 62
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "menu__item__nonVeg"
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 104
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -1097,14 +1097,14 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                                 children: "₹"
                             }, void 0, false, {
                                 fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                                lineNumber: 57,
+                                lineNumber: 58,
                                 columnNumber: 51
                             }, undefined),
                             price ? Math.round(price / 100) : Math.round(defaultPrice / 100)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                        lineNumber: 57,
+                        lineNumber: 58,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -1112,13 +1112,13 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                         children: description
                     }, void 0, false, {
                         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                        lineNumber: 58,
+                        lineNumber: 59,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -1131,7 +1131,7 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                         alt: "food-image"
                     }, void 0, false, {
                         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 17
                     }, undefined),
                     quantity === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -1140,7 +1140,7 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                         children: "Add +"
                     }, void 0, false, {
                         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 21
                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -1152,7 +1152,7 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                                     children: "-"
                                 }, void 0, false, {
                                     fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 68,
                                     columnNumber: 29
                                 }, undefined),
                                 quantity,
@@ -1162,32 +1162,32 @@ const RestaurantMenuItem = ({ data, addFoodItem, removeFoodItem })=>{
                                     children: "+"
                                 }, void 0, false, {
                                     fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 68,
                                     columnNumber: 114
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                            lineNumber: 66,
+                            lineNumber: 67,
                             columnNumber: 25
                         }, undefined)
                     }, void 0, false)
                 ]
             }, void 0, true, {
                 fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/restaurant/RestaurantMenuItem.jsx",
-        lineNumber: 51,
+        lineNumber: 52,
         columnNumber: 9
     }, undefined);
 };
-_s(RestaurantMenuItem, "ywyacyNGORMJnb8jlxch5qunh6w=", false, function() {
+_s(RestaurantMenuItem, "QJjHiiihqGeQnqdzqHo35sI75iM=", false, function() {
     return [
-        (0, _reactRedux.useSelector)
+        (0, _reactRouterDom.useParams)
     ];
 });
 _c = RestaurantMenuItem;
@@ -1200,6 +1200,6 @@ $RefreshReg$(_c, "RestaurantMenuItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"ctlMX","react":"21dqq","react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aw1Mh":[function() {},{}]},["bqSDJ","1xC6H"], null, "parcelRequire028a")
+},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"ctlMX","react":"21dqq","react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"aw1Mh":[function() {},{}]},["bqSDJ","1xC6H"], null, "parcelRequire028a")
 
 //# sourceMappingURL=RestaurantMenu.e776f02c.js.map

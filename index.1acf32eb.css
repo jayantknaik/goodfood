@@ -340,7 +340,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .home__swiper {
   gap: 32px;
-  padding: 0 0 8px;
+  padding: 0 0 16px;
   display: flex;
   overflow: auto;
 }
@@ -369,7 +369,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .res-card {
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all .3s;
   overflow: hidden;

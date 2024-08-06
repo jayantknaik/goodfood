@@ -186,9 +186,10 @@
 }
 
 .menu__head {
+  cursor: pointer;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 24px;
+  margin: 0 0 24px;
   display: flex;
 }
 
@@ -200,7 +201,6 @@
 }
 
 .menu__head__arrow {
-  cursor: pointer;
   width: 32px;
   height: 32px;
   transition: all .3s;
