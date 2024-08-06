@@ -17,9 +17,9 @@ const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) 
 
     return (
         <div className="menu__category">
-            <div className="menu__head">
+            <div className="menu__head" onClick={() => toggleCategory({id: id})}>
                 <div className="menu__head__text">{title}</div>
-                <div className={`menu__head__arrow ${isExpanded === id ? 'expand' : ''} `} onClick={() => toggleCategory({id: id})}></div>
+                <div className={`menu__head__arrow ${isExpanded === id ? 'expand' : ''} `}></div>
             </div>
             <div className={`menu__list ${isExpanded === id ? 'expand' : ''}`}>
             {

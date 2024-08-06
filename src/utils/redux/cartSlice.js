@@ -3,36 +3,32 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        items: [],
-        restaurants: [
-            {
-                key: "Restaurant's ID",
-                value: {
-                    key: "Item ID",
-                    value: {
-                        id: "",
-                        name: "",
-                        desc: "",
-                        quantity: "",
-                        img: ""
-                    }
-                }
-            }
-        ]
+        items: []
     },
     reducers: {
         addItem: (state, action) => {
+            
+            let index = state.items.findIndex(item => item.value.id === action.payload.value.id);
+            let payload = action.payload;
 
-            state.items.push(action.payload);
-            console.log(action.payload);
-            // state.restaurants.push(action.payload);
+            if (index !== -1) {
+                state.items[index].quantity = state.items[index].quantity + 1;
+            }
+            else {
+                payload.quantity = 1;
+                state.items.push(payload);
+            }
 
         },
         removeItem: (state, action) => {
             
-            let index = state.items.findIndex(item => item.card.info.id === action.payload);
+            let index = state.items.findIndex(item => item.value.id === action.payload);
 
             if (index !== -1) {
+                state.items[index].quantity = state.items[index].quantity - 1;
+            }
+            else {
+                payload.quantity = 0;
                 state.items.splice(index, 1);
             }
 

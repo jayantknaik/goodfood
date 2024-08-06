@@ -39,7 +39,6 @@ const Cart = () => {
                         <ul className="cart__list">
                             {
                                 cartItems.map((item, index) => {
-                                    const {id} = item.card.info;
                                     return (
                                         <CartItem key={index} data={item} />
                                     )
