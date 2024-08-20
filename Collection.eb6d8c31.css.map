@@ -1,1 +1,0 @@
-{"mappings":"","sources":["Collection.eb6d8c31.css","src/scss/pages/collection.scss"],"sourcesContent":["\n\n/*# sourceMappingURL=Collection.eb6d8c31.css.map */\n","@use '../base/variables' as *;\r\n\r\n.collection {\r\n    \r\n}"],"names":[],"version":3,"file":"Collection.eb6d8c31.css.map"}
