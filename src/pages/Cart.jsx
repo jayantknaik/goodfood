@@ -31,20 +31,22 @@ const Cart = () => {
                             <div className="cart__clearAll" onClick={()=>{clearCartItems(cartItems)}}>Clear All</div>
                         </div>
                         <div className="cart__details">
-                            <div className="cart__details__item">Product Details</div>
-                            <div className="cart__details__item">Price</div>
-                            <div className="cart__details__item">Quantity</div>
-                            <div className="cart__details__item">Total</div>
+                            <div className="cart__details__nav">
+                                <div className="cart__details__item">Product Details</div>
+                                <div className="cart__details__item">Price</div>
+                                <div className="cart__details__item">Quantity</div>
+                            </div>
+                            <ul className="cart__list">
+                                {
+                                    cartItems.map((item, index) => {
+                                        return (
+                                            <CartItem key={index} data={item} />
+                                        )
+                                    })
+                                }
+                            </ul>
+
                         </div>
-                        <ul className="cart__list">
-                            {
-                                cartItems.map((item, index) => {
-                                    return (
-                                        <CartItem key={index} data={item} />
-                                    )
-                                })
-                            }
-                        </ul>
                     </div>
                     <div className="cart__rt">
                         <div className="cart__rt__head">Summary</div>

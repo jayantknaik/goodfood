@@ -30,15 +30,19 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem}) => {
 
         const {id, imageId, name, price, description} = data?.card?.info;
 
-        addFoodItem({resId, value: {
-            "id": id,
-            "imageId": imageId,
-            "name": name,
-            "price": price,
-            "defaultPrice": defaultPrice,
-            "description": description
-        }});
-        
+        addFoodItem(
+            {
+                resId, 
+                value: {
+                    "id": id,
+                    "imageId": imageId,
+                    "name": name,
+                    "price": price,
+                    "defaultPrice": defaultPrice,
+                    "description": description
+                }
+            }
+        );
 
         setQuantity(quantity + 1);
     }

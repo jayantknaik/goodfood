@@ -95,7 +95,7 @@
     }
     &__details {
         display: grid;
-        grid-template-columns: 376px repeat(3, 1fr);
+        grid-template-columns: auto;
         gap: 16px;
         padding: 0 0 16px;
         &__item {
@@ -106,6 +106,12 @@
             &:not(:first-child) {
                 text-align: center;
             }
+        }
+        &__nav {
+            display: grid;
+            grid-template-columns: 376px repeat(2, 1fr);
+            gap: 16px;
+            padding: 0 0 16px;
         }
     }
     &__list {
@@ -127,7 +133,7 @@
     }
     &__item {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 16px;
         &__details {
             display: flex;

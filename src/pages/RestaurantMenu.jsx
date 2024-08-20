@@ -83,9 +83,7 @@ const RestaurantMenu = () => {
 
                 </div>
             </div>
-            {
-                scrollUpArrow && <div className="menu__scrollUp" onClick={() => scrollUp()}></div>
-            }
+            <div className={`menu__scrollUp ${scrollUpArrow ? 'active' : ''}`} onClick={() => scrollUp()}></div>
         </div>
 
         <Footer />

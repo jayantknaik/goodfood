@@ -1,7 +1,5 @@
 import { IMG_URL } from "../../utils/constants";
 import FoodNotFound from "../../../assets/images/dummyFood.jpg";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 
 const CartItem = ({data}) => {
 
@@ -24,7 +22,6 @@ const CartItem = ({data}) => {
             </div>
             <div className="cart__item__val"><span className="rupees-arial">&#8377;</span>{pricePerItem}</div>
             <div className="cart__item__val">{quantity}</div>
-            <div className="cart__item__val"><span className="rupees-arial">&#8377;</span>{pricePerItem * quantity}</div>
         </li>
     )
 
