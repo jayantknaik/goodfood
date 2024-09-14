@@ -24,8 +24,6 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                 <Link to='/' className="logo">goodfood</Link>
                 <Search resList={resList} />
                 <nav className="nav">
-                    {/* <Link to="/" className="nav__item">Home</Link> */}
-                    {/* <Link to="/contact" className="nav__item">Contact Us</Link> */}
                     <Link to="/about" className="nav__item">
                         <div className="nav__item">
                             <div className="nav__item__cnt">
