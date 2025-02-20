@@ -1,11 +1,10 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 
 const Header = ({resList, loginBtn, setLoginBtn}) => {
 
-    const totalCartItems = useSelector(store => store.cart.totalItems);
+    const totalCartItems = useSelector(state => state.cart.totalItems);
 
     const changeBtnName = (e) => {
         if(loginBtn === 'Logout') {
@@ -31,7 +30,7 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                </svg>Profile
+                                </svg>About
                             </div>
                         </div>
                     </Link>

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem}) => {
-
+const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
+    
+    console.log(data);
+    
     const {resId} = useParams();
 
     const {id, name, description, imageId, price, defaultPrice, itemAttribute} = data.card.info;
@@ -39,7 +41,9 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem}) => {
                     "name": name,
                     "price": price,
                     "defaultPrice": defaultPrice,
-                    "description": description
+                    "description": description,
+                    "resName": resName,
+                    "resId": resId
                 }
             }
         );

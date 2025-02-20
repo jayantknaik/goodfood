@@ -3,7 +3,7 @@ import { addItem } from "../../utils/redux/cartSlice";
 import { removeItem } from "../../utils/redux/cartSlice";
 import RestaurantMenuItem from "./RestaurantMenuItem";
 
-const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) => {
+const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory, resName, resId}) => {
 
     const dispatch = useDispatch();
 
@@ -28,7 +28,14 @@ const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) 
                     const {id} = li.card.info;
 
                     return (
-                        <RestaurantMenuItem data={li} key={id} addFoodItem={addFoodItem} removeFoodItem={removeFoodItem} />
+                        <RestaurantMenuItem 
+                            data={li} 
+                            key={id} 
+                            addFoodItem={addFoodItem} 
+                            removeFoodItem={removeFoodItem} 
+                            resName={resName}
+                            resId={resId}
+                        />
                     )
 
                 })

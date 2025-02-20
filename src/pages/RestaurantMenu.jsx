@@ -66,7 +66,7 @@ const RestaurantMenu = () => {
 
                     <div className="menu__info-container second">
                         <div className="menu__area">{areaName}</div>
-                        <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{costForTwo/100} for two</div>
+                        <div className="menu__cost"><span className="rupees-arial">&#8377;</span>{Math.round(costForTwo/100)} for two</div>
                     </div>
 
                     <div className="menu__info-container third">
@@ -76,7 +76,16 @@ const RestaurantMenu = () => {
                         const { title, itemCards } = item.card.card;
 
                         return (
-                            <RestaurantCategory id={`cat-${index}`} key={`cat-${index}`} title={title} itemCards={itemCards} isExpanded={isExpanded} toggleCategory={toggleCategory} />
+                            <RestaurantCategory 
+                                id={`cat-${index}`} 
+                                key={`cat-${index}`} 
+                                title={title} 
+                                itemCards={itemCards} 
+                                isExpanded={isExpanded} 
+                                toggleCategory={toggleCategory} 
+                                resName={name}
+                                resId={resId}
+                            />
                         )})
                     }
                     </div>
