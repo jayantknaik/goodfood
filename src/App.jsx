@@ -60,7 +60,7 @@ const appRouter = createBrowserRouter([
                 element: <Login />
             },
             {
-                path: '/collection/:collectionId',
+                path: '/collection/:collectionId/:collectionTag/:collectionType',
                 element: <Suspense fallback={<Shimmer/>}><Collection /></Suspense>
             },
         ],

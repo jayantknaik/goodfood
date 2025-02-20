@@ -3,7 +3,7 @@ import { addItem } from "../../utils/redux/cartSlice";
 import { removeItem } from "../../utils/redux/cartSlice";
 import RestaurantMenuItem from "./RestaurantMenuItem";
 
-const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) => {
+const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory, resName, resId}) => {
 
     const dispatch = useDispatch();
 
@@ -17,9 +17,9 @@ const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) 
 
     return (
         <div className="menu__category">
-            <div className="menu__head">
+            <div className="menu__head" onClick={() => toggleCategory({id: id})}>
                 <div className="menu__head__text">{title}</div>
-                <div className={`menu__head__arrow ${isExpanded === id ? 'expand' : ''} `} onClick={() => toggleCategory({id: id})}></div>
+                <div className={`menu__head__arrow ${isExpanded === id ? 'expand' : ''} `}></div>
             </div>
             <div className={`menu__list ${isExpanded === id ? 'expand' : ''}`}>
             {
@@ -28,7 +28,14 @@ const RestaurantCategory = ({id, title, itemCards, isExpanded, toggleCategory}) 
                     const {id} = li.card.info;
 
                     return (
-                        <RestaurantMenuItem data={li} key={id} addFoodItem={addFoodItem} removeFoodItem={removeFoodItem} />
+                        <RestaurantMenuItem 
+                            data={li} 
+                            key={id} 
+                            addFoodItem={addFoodItem} 
+                            removeFoodItem={removeFoodItem} 
+                            resName={resName}
+                            resId={resId}
+                        />
                     )
 
                 })

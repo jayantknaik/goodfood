@@ -14,6 +14,7 @@ const useFetchResCategories = (resId) => {
         const json = await data.json();
         setResCategories(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((item) => item.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"));
     }
+    
     return resCategories;
 }
 

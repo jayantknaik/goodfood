@@ -1,5 +1,6 @@
 import { IMG_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
+import FoodNotFound from "../../../assets/images/dummyFood.jpg";
 
 const RestaurantCard = ({resData}) => {
 
@@ -7,10 +8,10 @@ const RestaurantCard = ({resData}) => {
 
     return (
         <Link to={"/restaurants/" + id} className="res-card">
-            <img className="res-card__img" src={IMG_URL + cloudinaryImageId} alt="res-image" />
+            <img className="res-card__img" src={IMG_URL + cloudinaryImageId} onError={(e) => e.target.src = FoodNotFound} alt="res-image" />
             <div className="res-card__info">
                 <div className="res-card__row">
-                    <div className="res-card__name">{name}</div>
+                    <div className="res-card__name" title={name}>{name}</div>
                     <div className="res-card__rating">{avgRating}</div>
                 </div>
                 <div className="res-card__row">

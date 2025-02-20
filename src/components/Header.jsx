@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({resList, loginBtn, setLoginBtn}) => {
 
-    const cartItems = useSelector(store => store.cart.items);
+    const totalCartItems = useSelector(state => state.cart.totalItems);
 
     const changeBtnName = (e) => {
         if(loginBtn === 'Logout') {
@@ -23,8 +23,6 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                 <Link to='/' className="logo">goodfood</Link>
                 <Search resList={resList} />
                 <nav className="nav">
-                    {/* <Link to="/" className="nav__item">Home</Link> */}
-                    {/* <Link to="/contact" className="nav__item">Contact Us</Link> */}
                     <Link to="/about" className="nav__item">
                         <div className="nav__item">
                             <div className="nav__item__cnt">
@@ -32,7 +30,7 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
                                     <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                                </svg>Profile
+                                </svg>About
                             </div>
                         </div>
                     </Link>
@@ -54,7 +52,7 @@ const Header = ({resList, loginBtn, setLoginBtn}) => {
                                 <path d="M6 5l14 1l-1 7h-13" />
                             </svg>
                             Cart
-                            <div className="nav__item__cnt__num">{cartItems.length}</div>
+                            <div className="nav__item__cnt__num">{totalCartItems}</div>
                         </div>
                     </Link>
                     {/* <Link to='/login' className="nav__button" onClick={changeBtnName}>{loginBtn}</Link> */}

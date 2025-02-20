@@ -9,7 +9,7 @@ const Search = ({resList}) => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     const updateInput = (e) => {
-        currText = e.target.value;
+        let currText = e.target.value;
         setSearchText(currText);
         currText.length > 0 ? searchDD.current.classList.add('show') : searchDD.current.classList.remove('show');
         setFilteredRestaurants(resList.filter((res) => res.info.name.toLowerCase().includes(currText.toLowerCase())));
@@ -38,7 +38,9 @@ const Search = ({resList}) => {
                             const {id} = res.info;
 
                             return (
-                                <Link to={'/restaurants/' + id} key={id} className="search__list-item" onClick={closeDD}><div className="search__list-text">{res.info.name}</div></Link>
+                                <Link to={'/restaurants/' + id} key={id} className="search__list-item" onClick={closeDD}>
+                                    <div className="search__list-text">{res.info.name}</div>
+                                </Link>
                             )
                         })
                     }
