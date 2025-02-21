@@ -45283,100 +45283,107 @@ const Cart = ()=>{
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "cart__rt",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "cart__rt__head",
-                            children: "Order Summary"
-                        }, void 0, false, {
-                            fileName: "src/pages/Cart.jsx",
-                            lineNumber: 80,
-                            columnNumber: 29
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                            className: "cart__rt__list",
-                            children: cartItems.map((item, index)=>{
-                                const { name, price, defaultPrice } = item?.value;
-                                const { quantity } = item;
-                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                    className: "cart__rt__list-item",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "cart__rt__list-name",
-                                            children: name
-                                        }, void 0, false, {
-                                            fileName: "src/pages/Cart.jsx",
-                                            lineNumber: 90,
-                                            columnNumber: 49
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "cart__rt__list-val",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    className: "rupees-arial",
-                                                    children: "\u20B9"
-                                                }, void 0, false, {
-                                                    fileName: "src/pages/Cart.jsx",
-                                                    lineNumber: 91,
-                                                    columnNumber: 85
-                                                }, undefined),
-                                                price ? Math.round(quantity * (price / 100)) : Math.round(quantity * (defaultPrice / 100))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/pages/Cart.jsx",
-                                            lineNumber: 91,
-                                            columnNumber: 49
-                                        }, undefined)
-                                    ]
-                                }, index, true, {
-                                    fileName: "src/pages/Cart.jsx",
-                                    lineNumber: 89,
-                                    columnNumber: 45
-                                }, undefined);
-                            })
-                        }, void 0, false, {
-                            fileName: "src/pages/Cart.jsx",
-                            lineNumber: 81,
-                            columnNumber: 29
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "cart__rt__total",
-                            children: [
-                                "Subtotal: ",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    className: "cart__rt__total__val",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                            className: "rupees-arial",
-                                            children: "\u20B9"
-                                        }, void 0, false, {
-                                            fileName: "src/pages/Cart.jsx",
-                                            lineNumber: 97,
-                                            columnNumber: 111
-                                        }, undefined),
-                                        subTotal
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/pages/Cart.jsx",
-                                    lineNumber: 97,
-                                    columnNumber: 72
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/pages/Cart.jsx",
-                            lineNumber: 97,
-                            columnNumber: 29
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "cart__rt__cta",
-                            onClick: ()=>makePayment(),
-                            children: "Checkout Now"
-                        }, void 0, false, {
-                            fileName: "src/pages/Cart.jsx",
-                            lineNumber: 98,
-                            columnNumber: 29
-                        }, undefined)
-                    ]
-                }, void 0, true, {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "cart__rt__wrp",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "cart__rt__head",
+                                children: "Order Summary"
+                            }, void 0, false, {
+                                fileName: "src/pages/Cart.jsx",
+                                lineNumber: 81,
+                                columnNumber: 33
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                className: "cart__rt__list scrollbar",
+                                children: cartItems.map((item, index)=>{
+                                    const { name, price, defaultPrice } = item?.value;
+                                    const { quantity } = item;
+                                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        className: "cart__rt__list-item",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "cart__rt__list-name",
+                                                children: name
+                                            }, void 0, false, {
+                                                fileName: "src/pages/Cart.jsx",
+                                                lineNumber: 91,
+                                                columnNumber: 53
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "cart__rt__list-val",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                        className: "rupees-arial",
+                                                        children: "\u20B9"
+                                                    }, void 0, false, {
+                                                        fileName: "src/pages/Cart.jsx",
+                                                        lineNumber: 92,
+                                                        columnNumber: 89
+                                                    }, undefined),
+                                                    price ? Math.round(quantity * (price / 100)) : Math.round(quantity * (defaultPrice / 100))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "src/pages/Cart.jsx",
+                                                lineNumber: 92,
+                                                columnNumber: 53
+                                            }, undefined)
+                                        ]
+                                    }, index, true, {
+                                        fileName: "src/pages/Cart.jsx",
+                                        lineNumber: 90,
+                                        columnNumber: 49
+                                    }, undefined);
+                                })
+                            }, void 0, false, {
+                                fileName: "src/pages/Cart.jsx",
+                                lineNumber: 82,
+                                columnNumber: 33
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "cart__rt__total",
+                                children: [
+                                    "Subtotal: ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "cart__rt__total__val",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                className: "rupees-arial",
+                                                children: "\u20B9"
+                                            }, void 0, false, {
+                                                fileName: "src/pages/Cart.jsx",
+                                                lineNumber: 98,
+                                                columnNumber: 115
+                                            }, undefined),
+                                            subTotal
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/pages/Cart.jsx",
+                                        lineNumber: 98,
+                                        columnNumber: 76
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/pages/Cart.jsx",
+                                lineNumber: 98,
+                                columnNumber: 33
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "cart__rt__cta",
+                                onClick: ()=>makePayment(),
+                                children: "Checkout Now"
+                            }, void 0, false, {
+                                fileName: "src/pages/Cart.jsx",
+                                lineNumber: 99,
+                                columnNumber: 33
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/pages/Cart.jsx",
+                        lineNumber: 80,
+                        columnNumber: 29
+                    }, undefined)
+                }, void 0, false, {
                     fileName: "src/pages/Cart.jsx",
                     lineNumber: 79,
                     columnNumber: 25

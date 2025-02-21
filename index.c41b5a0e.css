@@ -456,6 +456,12 @@
   padding: 16px;
 }
 
+.cart__rt__wrp {
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+}
+
 .cart__rt__head {
   color: #303030;
   font-size: 24px;
@@ -470,7 +476,8 @@
   background-color: #d8232a;
   border: 1px solid #d8232a;
   border-radius: 50px;
-  min-width: 124px;
+  width: 100%;
+  margin-top: auto;
   padding: 0 20px;
   font-size: 14px;
   font-weight: 600;
@@ -496,7 +503,8 @@
   border-bottom: 1px dashed #d7d7d7;
   flex-direction: column;
   gap: 8px;
-  padding: 16px 0;
+  max-height: 312px;
+  padding: 16px 16px 16px 0;
   font-size: 14px;
   display: flex;
 }
