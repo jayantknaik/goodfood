@@ -11,8 +11,6 @@ const Collection = () => {
     const collectionData = useFetchResCollection({collectionId, collectionTag, collectionType});
     const collectionInfo = useFetchResCollectionInfo({collectionId, collectionTag, collectionType});
 
-    console.log(collectionInfo);
-
     return collectionInfo.length === undefined || collectionData.length === undefined ? <Shimmer /> : (
         <div className="collection">
             <div className="collection__head">{collectionInfo[0]?.card?.card?.title}</div>

@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 
 const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
     
-    console.log(data);
-    
     const {resId} = useParams();
 
     const {id, name, description, imageId, price, defaultPrice, itemAttribute} = data.card.info;
     const [quantity, setQuantity] = useState(0);
-    const cartItems = useState(useSelector(store => store.cart.items));
+    const cartItems = useState(useSelector(state => state.cart.items));
 
+    console.log(cartItems);
+    
     useEffect(() => {
 
         let count = 0;

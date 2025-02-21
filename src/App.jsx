@@ -13,6 +13,8 @@ const RestaurantMenu = lazy(() => import("./pages/RestaurantMenu"));
 import { Provider } from "react-redux";
 import store from './utils/redux/store';
 import Cart from "./pages/Cart";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentFailed from "./pages/PaymentFailed";
 const Collection = lazy(() => import("./pages/Collection"));
 
 const AppLayout = () => {
@@ -63,10 +65,18 @@ const appRouter = createBrowserRouter([
                 path: '/collection/:collectionId/:collectionTag/:collectionType',
                 element: <Suspense fallback={<Shimmer/>}><Collection /></Suspense>
             },
+            {
+                path: '/payment-success',
+                element: <PaymentSuccess />
+            },
+            {
+                path: '/payment-failed',
+                element: <PaymentFailed />
+            },
         ],
         errorElement: <Error />
     }, 
-], {basename: "/GoodFood"})
+], {basename: "/goodfood"})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
