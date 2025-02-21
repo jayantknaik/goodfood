@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Shimmer from "../components/Shimmer";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import useFetchResInfo from '../utils/hooks/useFetchResInfo';
 import useFetchResCategories from "../utils/hooks/useFetchResCategories";
@@ -17,6 +17,7 @@ const RestaurantMenu = () => {
     const {name, avgRating, totalRatingsString, cuisines, areaName, costForTwo, cloudinaryImageId} = resInfo;
     const [scrollUpArrow, setScrollUpArrow] = useState(false);
     const [isExpanded, setIsExpanded] = useState('cat-0');
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -49,7 +50,10 @@ const RestaurantMenu = () => {
     return resCategories == null ? <Shimmer /> : 
     <>
         <div className="menu">
-            <img className="menu__img" src={IMG_URL + cloudinaryImageId} onError={(e) => e.target.src = FoodNotFound} alt="" />
+            <div className="menu__imgCnt">
+                <div className="menu__back" onClick={() => navigate(-1)}></div>
+                <img className="menu__img" src={IMG_URL + cloudinaryImageId} onError={(e) => e.target.src = FoodNotFound} alt="" />
+            </div>
             <div className="menu__info">
                 <div className="menu__info__scroll">
 
