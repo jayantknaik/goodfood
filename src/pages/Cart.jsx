@@ -77,25 +77,27 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className="cart__rt">
-                            <div className="cart__rt__head">Order Summary</div>
-                            <ul className="cart__rt__list">
-                                {
-                                    cartItems.map((item, index) => {
+                            <div className="cart__rt__wrp">
+                                <div className="cart__rt__head">Order Summary</div>
+                                <ul className="cart__rt__list scrollbar">
+                                    {
+                                        cartItems.map((item, index) => {
 
-                                        const { name, price, defaultPrice } = item?.value;
-                                        const { quantity } = item;
+                                            const { name, price, defaultPrice } = item?.value;
+                                            const { quantity } = item;
 
-                                        return (
-                                            <li className="cart__rt__list-item" key={index}>
-                                                <div className="cart__rt__list-name">{name}</div>
-                                                <div className="cart__rt__list-val"><span className="rupees-arial">&#8377;</span>{price ? Math.round(quantity * (price / 100)) : Math.round(quantity * (defaultPrice / 100))}</div>
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                            <div className="cart__rt__total">Subtotal: <span className="cart__rt__total__val"><span className="rupees-arial">&#8377;</span>{subTotal}</span></div>
-                            <div className="cart__rt__cta" onClick={() => makePayment()}>Checkout Now</div>
+                                            return (
+                                                <li className="cart__rt__list-item" key={index}>
+                                                    <div className="cart__rt__list-name">{name}</div>
+                                                    <div className="cart__rt__list-val"><span className="rupees-arial">&#8377;</span>{price ? Math.round(quantity * (price / 100)) : Math.round(quantity * (defaultPrice / 100))}</div>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                                <div className="cart__rt__total">Subtotal: <span className="cart__rt__total__val"><span className="rupees-arial">&#8377;</span>{subTotal}</span></div>
+                                <div className="cart__rt__cta" onClick={() => makePayment()}>Checkout Now</div>
+                            </div>
                         </div>
                     </div>
             }
