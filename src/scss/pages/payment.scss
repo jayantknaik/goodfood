@@ -1,0 +1,28 @@
+@use "../base/variables" as *;
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1140px;
+    margin: 120px auto 0;
+    &__title {
+        font-size: $font-size-xl;
+        line-height: 24px;
+        font-weight: $font-weight-semi-bold;
+        padding: 0 0 8px;
+        color: $gray-900;
+        &--fail {
+            color: $red-900;
+        }
+        &--success {
+            color: $green-900;
+        }
+    }
+    &__message {
+        font-size: $font-size-lg;
+        line-height: 24px;
+        color: $gray-500;
+    }
+}

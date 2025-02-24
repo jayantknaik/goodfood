@@ -11,8 +11,6 @@ const RestaurantMenuItem = ({data, addFoodItem, removeFoodItem, resName}) => {
     const {id, name, description, imageId, price, defaultPrice, itemAttribute} = data.card.info;
     const [quantity, setQuantity] = useState(0);
     const cartItems = useState(useSelector(state => state.cart.items));
-
-    console.log(cartItems);
     
     useEffect(() => {
 

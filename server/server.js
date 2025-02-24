@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require('dotenv').config();
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const port = 3000;
 
@@ -29,6 +29,7 @@ app.post("/create-checkout-session", async (req, res) => {
                 currency: "INR",
                 product_data: {
                     name: item.value.name,
+                    images: [`${IMG_URL}${item.value.imageId}`],
                 },
                 unit_amount: item.value.price,
             },
