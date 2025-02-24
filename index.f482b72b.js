@@ -45602,7 +45602,7 @@ $RefreshReg$(_c, "CartItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"8VdUL","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../utils/redux/cartSlice":"goXg1","react-redux":"62sf7"}],"jmHZg":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","../../utils/constants":"hB8jg","../../../assets/images/dummyFood.jpg":"8VdUL","react-router-dom":"9xmpe","../../utils/redux/cartSlice":"goXg1","react-redux":"62sf7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jmHZg":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$6155 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -50445,14 +50445,50 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
+var _paymentScss = require("../scss/pages/payment.scss");
+var _paymentSuccessSvg = require("../../assets/images/payment-success.svg");
+var _paymentSuccessSvgDefault = parcelHelpers.interopDefault(_paymentSuccessSvg);
 const PaymentSuccess = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "PaymentSuccess"
-    }, void 0, false, {
+        className: "payment",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "payment__img",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _paymentSuccessSvgDefault.default),
+                    alt: "payment-success-icon",
+                    width: 400,
+                    height: 400
+                }, void 0, false, {
+                    fileName: "src/pages/PaymentSuccess.jsx",
+                    lineNumber: 8,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/PaymentSuccess.jsx",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "payment__title payment__title--success",
+                children: "Payment Success"
+            }, void 0, false, {
+                fileName: "src/pages/PaymentSuccess.jsx",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "payment__message",
+                children: "Your payment was successful."
+            }, void 0, false, {
+                fileName: "src/pages/PaymentSuccess.jsx",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/pages/PaymentSuccess.jsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 9
     }, undefined);
 };
@@ -50466,7 +50502,10 @@ $RefreshReg$(_c, "PaymentSuccess");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ii8NJ":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../scss/pages/payment.scss":"dj1UJ","../../assets/images/payment-success.svg":"3ve8j"}],"dj1UJ":[function() {},{}],"3ve8j":[function(require,module,exports,__globalThis) {
+module.exports = require("8bca0f786e23a61").getBundleURL('kFIdX') + "payment-success.bdd50cae.svg" + "?" + Date.now();
+
+},{"8bca0f786e23a61":"lgJ39"}],"ii8NJ":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$176a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -50476,14 +50515,50 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
+var _paymentScss = require("../scss/pages/payment.scss");
+var _paymentFailedSvg = require("../../assets/images/payment-failed.svg");
+var _paymentFailedSvgDefault = parcelHelpers.interopDefault(_paymentFailedSvg);
 const PaymentFailed = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "PaymentFailed"
-    }, void 0, false, {
+        className: "payment",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "payment__img",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    src: (0, _paymentFailedSvgDefault.default),
+                    alt: "payment-failed-icon",
+                    width: 400,
+                    height: 400
+                }, void 0, false, {
+                    fileName: "src/pages/PaymentFailed.jsx",
+                    lineNumber: 8,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/pages/PaymentFailed.jsx",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "payment__title payment__title--fail",
+                children: "Payment Failed"
+            }, void 0, false, {
+                fileName: "src/pages/PaymentFailed.jsx",
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "payment__message",
+                children: "Your payment was unsuccessful. Please try again."
+            }, void 0, false, {
+                fileName: "src/pages/PaymentFailed.jsx",
+                lineNumber: 11,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/pages/PaymentFailed.jsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 9
     }, undefined);
 };
@@ -50497,7 +50572,10 @@ $RefreshReg$(_c, "PaymentFailed");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jwZmk":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../scss/pages/payment.scss":"dj1UJ","../../assets/images/payment-failed.svg":"5XPyZ"}],"dj1UJ":[function() {},{}],"5XPyZ":[function(require,module,exports,__globalThis) {
+module.exports = require("f1905c2721fac9f7").getBundleURL('kFIdX') + "payment-failed.2c09e0df.svg" + "?" + Date.now();
+
+},{"f1905c2721fac9f7":"lgJ39"}],"jwZmk":[function(require,module,exports,__globalThis) {
 module.exports = Promise.all([
     require("bf87d84af3531d8e")(require("e4ddfe7d38ea7fbe").getBundleURL('kFIdX') + "Collection.553220c8.css" + "?" + Date.now()).catch((err)=>{
         delete module.bundle.cache[module.id];

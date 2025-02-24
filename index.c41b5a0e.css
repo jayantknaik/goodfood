@@ -301,11 +301,29 @@
 
 .res-card__veg {
   cursor: pointer;
-  border-bottom: 4px solid #267e3e;
-  border-radius: 16px;
+  transform-origin: center;
+  border-radius: 8px;
   transition: all .3s;
   position: relative;
   overflow: hidden;
+}
+
+.res-card__veg:before {
+  content: "";
+  content: "PURE VEG";
+  color: #fff;
+  text-align: center;
+  transform-origin: center;
+  background: linear-gradient(-90deg, #009480 0%, #70970c 100%);
+  width: 90px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0;
 }
 
 .res-card__veg:hover, .res-card:hover {
@@ -363,10 +381,6 @@
   font-weight: 600;
 }
 
-.about__head-name {
-  font-family: Playfair Display, sans-serif;
-}
-
 .about__desc {
   color: #606060;
   max-width: 50%;
@@ -377,6 +391,7 @@
 
 .about__desc--name {
   font-family: Playfair Display, sans-serif;
+  font-weight: 600;
 }
 
 .cart {
@@ -495,7 +510,7 @@
   border-bottom: 1px dashed #d7d7d7;
   justify-content: space-between;
   margin-bottom: 32px;
-  padding: 16px 0;
+  padding: 16px 16px 16px 0;
   display: flex;
 }
 
@@ -699,5 +714,36 @@
 
 .cart__item__cross:hover {
   rotate: 90deg;
+}
+
+.payment {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1140px;
+  margin: 120px auto 0;
+  display: flex;
+}
+
+.payment__title {
+  color: #303030;
+  padding: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.payment__title--fail {
+  color: #d8232a;
+}
+
+.payment__title--success {
+  color: #009681;
+}
+
+.payment__message {
+  color: #909090;
+  font-size: 16px;
+  line-height: 24px;
 }
 /*# sourceMappingURL=index.c41b5a0e.css.map */
