@@ -17,13 +17,6 @@
   bottom: 0;
 }
 
-.rupees-arial {
-  vertical-align: -2px;
-  margin-right: 2px;
-  font-family: Arial, Helvetica, sans-serif;
-  display: inline-block !important;
-}
-
 .menu {
   grid-template-columns: 300px 1fr;
   gap: 30px;
@@ -70,6 +63,26 @@
   left: 8px;
   translate: 0 -50%;
   rotate: 45deg;
+}
+
+.menu__fav {
+  color: #606060;
+  cursor: pointer;
+  background-color: #d7d7d7;
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  transition: all .3s;
+  display: flex;
+  box-shadow: 0 6px 24px #0000000d, 0 0 0 1px #00000014;
+}
+
+.menu__fav.active {
+  color: #fff;
+  background-color: #d8232a;
 }
 
 .menu__category {
@@ -163,10 +176,17 @@
   color: #303030;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 608px;
+  width: 100%;
+  max-width: 550px;
   font-size: 42px;
   font-weight: 600;
   overflow: hidden;
+}
+
+.menu__name-cnt {
+  align-items: center;
+  gap: 16px;
+  display: flex;
 }
 
 .menu__cuisines, .menu__area, .menu__cost {
@@ -198,6 +218,7 @@
   background-color: #267e3e;
   border-radius: 4px;
   padding: 0 2px 0 6px;
+  font-family: Inter, serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
@@ -325,6 +346,11 @@
   overflow: hidden;
 }
 
+.menu__item__cost {
+  font-family: Inter, serif;
+  font-size: 14px;
+}
+
 .menu__item__desc {
   color: #606060;
   -webkit-line-clamp: 2;
@@ -347,6 +373,7 @@
   align-items: center;
   gap: 12px;
   padding: 0 16px;
+  font-family: Inter, serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 28px;
@@ -364,7 +391,7 @@
 }
 
 .menu__item__cta.active {
-  min-width: 104px;
+  min-width: 124px;
 }
 
 .menu__item__cta.active:hover {

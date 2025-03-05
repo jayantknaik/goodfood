@@ -35,6 +35,16 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+.rupees-arial {
+  margin-right: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block !important;
+}
+
+.font-inter {
+  font-family: Inter, serif;
+}
+
 .scrollbar {
   overflow: auto;
 }
@@ -115,6 +125,7 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   width: 20px;
   height: 20px;
+  font-family: Inter, serif;
   font-size: 10px;
   display: flex;
   position: absolute;
