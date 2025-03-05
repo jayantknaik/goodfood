@@ -1,0 +1,24 @@
+@use "../base/variables" as *;
+
+.fav {
+    position: relative;
+    max-width: 1140px;
+    margin: 120px auto 32px;
+    color: $gray-900;
+    &__head {
+        height: 64px;
+        font-size: 42px;
+        font-weight: $font-weight-semi-bold;
+        line-height: 64px;
+        color: $gray-900;
+        padding: 0 0 8px;
+    }
+    &__desc {
+        height: 54px;
+        font-size: $font-size-lg;
+        line-height: 22px;
+        font-weight: $font-weight-medium;
+        color: $gray-700;
+        padding: 0 0 32px;
+    }
+}
