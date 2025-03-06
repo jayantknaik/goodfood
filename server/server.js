@@ -12,6 +12,13 @@ const io = require('socket.io')(server, {
     }
 });
 
+io.on('connection', (socket) => {
+    console.log('A user connected');
+
+    socket.on('disconnect', () => {
+        console.log('User disconnected');
+    });
+});
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -24,10 +31,10 @@ const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "./dist")));
 
 app.get("/goodfood", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+    res.sendFile(path.join(__dirname, "./dist/index.html"));
 })
 
 app.post("/create-checkout-session", async (req, res) => {
