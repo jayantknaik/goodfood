@@ -6,7 +6,7 @@ const server = require('http').createServer();
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: "https://jayantknaik.github.io",
+        origin: "https://jayantknaik.github.io/goodfood",
         methods: ["GET", "POST"],
         credentials: true
     }
