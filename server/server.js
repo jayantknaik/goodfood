@@ -2,6 +2,16 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 require('dotenv').config();
+const server = require('http').createServer();
+
+const io = require('socket.io')(server, {
+    cors: {
+        origin: "https://jayantknaik.github.io",
+        methods: ["GET", "POST"],
+        credentials: true
+    }
+});
+
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -16,7 +26,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("/*", (req,res) => {
+app.get("/*", (req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 })
 
